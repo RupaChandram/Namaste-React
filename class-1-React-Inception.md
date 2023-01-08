@@ -23,7 +23,8 @@
     => CDN is a network of servers linked together with the goal of delivering content as quickly, cheaply, reliably, and securely as possible
     => In simple term cdn is a library file that is injected to our code to access the content like HTML pages, javascript files, stylesheets, images, and videos. 
 
-    Benefits of using a CDN
+    Benefits of using a CDN:
+    
         1. Improving website load times
                 - By distributing content closer to website visitors by using a nearby CDN server (among other optimizations), visitors experience faster page loading times.
 
@@ -44,6 +45,7 @@
 
 
 5)What is cross-origin tag?
+
     => The crossorigin attribute sets the mode of the request to an HTTP CORS Request.
     => Web pages often make requests to load resources on other servers. Here is where CORS comes in.
     => A cross-origin request is a request for a resource (e.g. style sheets, iframes, images, fonts, or scripts) from another domain.
@@ -55,6 +57,7 @@
     => Additional Header in HTTP CORS request : [ACCEPT-Control-Allow-Origin]
 
 6)Difference between React and ReactDom
+
     => React library is responsible for creating views/UI.
     => ReactDOM library is responsible to actually render UI in the browser.
 
