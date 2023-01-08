@@ -64,7 +64,8 @@
 	=> react.development.js -These files contains code which are more readable and developer friendly for development usage.
 
 8)What is async and defer?
-    Without async/defer 
+
+    Without async/defer :-
     => In this scenario when script tag is encountered, HTML parsing is stopped then scripts will fetched and executed.
 	=> Once the execution of scripts overed then the HTML parsing is continued.
 
