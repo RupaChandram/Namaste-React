@@ -1,1 +1,1 @@
-This repo is for learning purpose. All learning from Namaste React would be kept here.
+This repo is for learning purpose. All learnings from Namaste React would be kept here.
