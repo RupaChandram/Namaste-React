@@ -8,7 +8,7 @@
 
 ### 2) What is `Parcel/Webpack`? Why do we need it?
 
-    => Parcel is a bundler. Bundler is a tool that gives many facilities like optimizing the code, removing the console log, caching etc.
+    => Parcel is a bundler. Bundler is a tool that gives many facilities like optimizing the code, caching etc.
 
     Need :
 
@@ -35,7 +35,7 @@
 
 ### 5) What is difference between `dependencies` vs `devDependencies`?
     
-    => dependencies : Packages that are required in production environment as well as in developement environment (globally).
+    => dependencies : Packages that are required in your project.
     => devDependencies : Packages that are used for only development environment. 
 
 ### 6) What is Tree Shaking?
