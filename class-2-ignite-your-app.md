@@ -1,4 +1,4 @@
-## 1) What is NPM?
+### 1) What is NPM?
 
     => NPM does not stand for node package manager. Full form is not mentioned anywhere officially.
     => But People call it as node package manager.
@@ -6,7 +6,7 @@
     => In react, We can initailize the react through the command "npm init"
     => If you use the command "npm init -y" then it will skip lots of option.
 
-## 2) What is `Parcel/Webpack`? Why do we need it?
+### 2) What is `Parcel/Webpack`? Why do we need it?
 
     => Parcel is a bundler. Bundler is a tool that gives many facilities like optimizing the code, removing the console log, caching etc.
 
@@ -17,7 +17,7 @@
     => A bundler is used to solve this latency issue by combining and merging your code into a single file. 
    
 
-## 3) What is `.parcel-cache`?
+### 3) What is `.parcel-cache`?
 
     => .parcel-cache in parcel stores information about your project when parcel builds it, so that when it rebuilds, 
     it doesn't have to re-parse and re-analyze everything from scratch. 
