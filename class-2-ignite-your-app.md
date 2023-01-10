@@ -27,16 +27,17 @@
 
 ### 4) What is `npx` ?
 
-   => The npx stands for Node Package Execute
-   => It means execute using npm. Npx is a tool that use to execute packages.
-   => A package can be executable without installing the package. It is an npm package runner so if any packages aren’t already installed it will install them automatically.
-   => Eg: In npx you can create a react app without installing the package: `npx create-react-app myApp`
+    => The npx stands for Node Package Execute.
+    => It means execute using npm. Npx is a tool that use to execute packages.
+    => A package can be executable without installing the package. It is an npm package runner so if any packages aren’t already installed it will install them automatically.
+    => Eg: In npx you can create a react app without installing the package: `npx create-react-app myApp`
 
 
 ### 5) What is difference between `dependencies` vs `devDependencies`?
     
     => dependencies : Packages that are required in your project.
     => devDependencies : Packages that are used for only development environment. 
+
 
 ### 6) What is Tree Shaking?
 
@@ -151,10 +152,8 @@
 
 ### 14) What is `browserlists`
 
-   => Browserslist is usually defined in the browserslist key in the package.json file. 
-   => Browserslist is a configuration file that is used to specify which browsers and browser versions should be 
-    targeted when building and testing a project. It is commonly used with tools like Babel and Autoprefixer to ensure that the 
-    resulting code is compatible with the specified range of browsers.
+    => Browserslist is usually defined in the browserslist key in the package.json file. 
+    => Browserslist is a configuration file that is used to specify which browsers and browser versions should be targeted when building and testing a project. It is commonly used with tools like Babel and Autoprefixer to ensure that the resulting code is compatible with the specified range of browsers.
 
 ### 15) Read about dif bundlers: vite, webpack, parcel
 
