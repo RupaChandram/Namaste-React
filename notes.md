@@ -1,22 +1,22 @@
 ## Topics to be covered
-    - Initialize npm
-    - Types of dependencies
-    - browserlists
-    - Pollyfill
-    - .gitignore
-    - Super powers of parcel
-    - Tree shanking
-    - Webpack
-    - Build performant web scalable app
-    - command to run the project
-    - Babel
-    - JSX
-    - node_module (package.json)
-    - React Component
-    - Function components
-    - Composing Component
-    - React Reconcilliation
-    - link
+    * Initialize npm
+    * Types of dependencies
+    * browserlists
+    * Pollyfill
+    * .gitignore
+    * Super powers of parcel
+    * Tree shanking
+    * Webpack
+    * Build performant web scalable app
+    * command to run the project
+    * Babel
+    * JSX
+    * node_module (package.json)
+    * React Component
+    * Function components
+    * Composing Component
+    * React Reconcilliation
+    * link
     
 ## Notes :
 
@@ -127,8 +127,8 @@
 
 ### babel remove console log plugin
 
-   => Note: Parcel won't remove console.log. You can do it with babel plugin.
-   => link: [babel remove console log plugin](https://www.npmjs.com/package/babel-plugin-transform-remove-console)
+  => Parcel won't remove console.log. You can do it with babel plugin.
+  => link: [babel remove console log plugin](https://www.npmjs.com/package/babel-plugin-transform-remove-console)
 
 ### Key
 
