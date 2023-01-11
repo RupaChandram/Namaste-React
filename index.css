@@ -1,3 +1,26 @@
- #container {
-     background-color: lightgrey;
+ .main {
+    margin: 2rem;
  }
+ .header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: darkgray;
+ }
+ img{
+    width: 4rem;
+    height: 4rem;
+    padding: 0.5rem;
+ }
+ .search{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ .searchbar{
+    width: 20rem;
+    height: 1.5rem;
+    border-radius: 5px;
+ }
+ 
