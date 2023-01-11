@@ -195,11 +195,11 @@
 
 #### link
 
-    => [Babel](https://babeljs.io/)
-    => [Attribute Type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type)
-    => [JS Module](https://learn.namastedev.com/s/courses/6389e7a3e4b012dc9ad879ff/take)
-    => [Babel Playground](https://babeljs.io/repl#)
-    => [React Without JSX](https://reactjs.org/docs/react-without-jsx.html)
+   [Babel](https://babeljs.io/)
+   [Attribute Type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type)
+   [JS Module](https://learn.namastedev.com/s/courses/6389e7a3e4b012dc9ad879ff/take)
+   [Babel Playground](https://babeljs.io/repl#)
+   [React Without JSX](https://reactjs.org/docs/react-without-jsx.html)
 
 
 
