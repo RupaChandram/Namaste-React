@@ -127,7 +127,7 @@
 
 ### babel remove console log plugin
 
-    => Note: Parcel won't remove console.log. You can do it with babel plugin.
+    => Parcel won't remove console.log. You can do it with babel plugin.
     => link: [babel remove console log plugin](https://www.npmjs.com/package/babel-plugin-transform-remove-console)
 
 ### Key
@@ -193,7 +193,7 @@
     => Uses diff algorithm
     
 
-#### link
+#### links
 
 * [Babel](https://babeljs.io/)
 * [Attribute Type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type)
