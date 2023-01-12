@@ -16,6 +16,7 @@
 * Function components
 * Composing Component
 * React Reconcilliation
+* {{}} - how 2 parenthesis work?
 * link
     
 ## Notes :
@@ -191,6 +192,13 @@
 ### React Reconcilliation
 
     => Uses diff algorithm
+    
+### {{}} - how 2 parenthesis work?
+
+    => It works as a Javascript object. Inside first parenthesis is JS code.
+    => Babel is a compiler that creates a polyfill. polyfill is a piece of code that is replacement for newer version of code 
+    compatible for older versions of browser.
+    => Browser doesn't understand JSX /babel. Because browser uses Javascript engine which understand only javascript code.
     
 
 #### links
