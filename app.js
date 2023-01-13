@@ -1,83 +1,57 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Logo from "./assets/images/logo.png";
-import User from "./assets/images/user.png"
+import logo from "./assets/images/food-logo.png"
+import cart from "./assets/images/cart.png"
 
-//Assignment 1
-/* Nested header element with h1,h2,h3 using React.createElement() inside div with class-title */
 
-const heading1 = React.createElement('h1', { id: "heading1" }, "Laying The Foundation");
-const heading2 = React.createElement('h2', { id: "heading2" }, "Nested Header using React.createElement()");
-const heading3 = React.createElement('h3', { id: "heading1" }, "h1,h2,h3 inside div with title");
 
-const main = React.createElement('div', { className: "title" },[heading1,heading2,heading3] );
 
-/* Nested header element with h1,h2,h3 using JSX */
-
-const jsxElem = (
-    <div>
-        <h1>Laying The Foundation</h1>
-        <h2>Nested Header using JSX</h2>
-        <h3>h1,h2,h3 inside div with title</h3>
-    </div>
-    
+const Title = ()=>(
+    <h1 id="title" key="title">
+        <b>RicePIE</b>
+        {/* <img src={logo} alt="RicePie" /> */}
+    </h1>
 )
-
-/* Nested header element with h1,h2,h3 using JSX React Element and pass attributes */
-
-const attributedJSX = (
-    <div className="title">
-        <h1 id="heading1">Laying The Foundation</h1>
-        <h2 id="heading2">Nested Header using JSX with Attributes</h2>
-        <h3 id="heading3">h1,h2,h3 inside div with title</h3>
-    </div>
-    
-)
-
-/* Nested header element with h1,h2,h3 using Functional Component */
-
-const Header = function () {
-    return (
-        <div>
-            <h1 id="heading1">Laying The Foundation</h1>
-            <h2 id="heading2">Nested Header Functional Component</h2>
-            <h3 id="heading3">h1,h2,h3 inside div with title</h3>
-        </div>
-    )
-}
-
-// Assingment 2
-/**
- * add a logo on the left
- * add a search bar in the middle
- * add a user icon on the right
- * add css to make it nice */
 
 const HeaderComponent = () => (
     
     <div className="header">
-            <div className="logo">
-            <img src={Logo} key="logo" alt="Logo" />
-            </div>
-            <div className="search">
-                <input type="text" key="search" className="searchbar" placeholder="search here" />
-            </div>         
-            <div className="user" key="user">
-                <img src={User} alt="user" key="user-img" />
+            <Title />          
+            <div className="nav-items" key="user">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact Us</li>
+                <li><img src={cart} alt="" /></li>
+               </ul>
             </div>      
     </div>
 )
 
-const Main = () => (
-    <div className="main">
+const Layout = () => (
+    <div>
+    {
+    /**
+     * Header
+     *  - Logo
+     *  - Nav Items
+     *  - cart
+     * Body
+     *  -search bar
+     *  -RestaurantList
+     *      -RestaurantCard
+     *      -Name 
+     *      -Rating
+     *      -Cousines
+     * Footer
+     *  - links
+     *  - copyright
+     */
+    }
         <HeaderComponent />
-        {main}
-        <Header />
-        {jsxElem}
-        {attributedJSX}
-    </div>       
+        </div>
 )
  
 const root = ReactDOM.createRoot(document.getElementById("root"));
  
- root.render(<Main />);
+ root.render(<Layout />);

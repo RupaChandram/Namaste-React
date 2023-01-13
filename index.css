@@ -1,22 +1,21 @@
- .main {
-    margin: 2rem;
- }
  .header{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-between;
-    background-color: darkgray;
+    margin:2px;
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
  }
  img{
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 5rem;
     padding: 0.5rem;
  }
- .search{
-   display: flex;
-   align-items: center;
-   justify-content: center;
+ .nav-items >ul  {
+   list-style-type: none;
+   display: flex; 
+   padding: 2rem;
+ }
+ .nav-items>ul>li {
+   padding: 10px;
  }
  .searchbar{
     width: 20rem;
