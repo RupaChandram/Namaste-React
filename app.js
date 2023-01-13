@@ -1,37 +1,41 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import logo from "./assets/images/food-logo.png"
+import logo from "./assets/images/hunger-box.png"
 import cart from "./assets/images/cart.png"
 
-
-
-
-const Title = ()=>(
-    <h1 id="title" key="title">
-        <b>RicePIE</b>
-        {/* <img src={logo} alt="RicePie" /> */}
-    </h1>
+const Title = () => (
+    <a href="/" >
+        <img className="logo" src={logo} alt="Logo" />
+    </a>
 )
+const styleObj = {
+    color: "red"
+}
 
-const HeaderComponent = () => (
-    
+const HeaderComponent = () => {
+    return(
     <div className="header">
-            <Title />          
+         <Title />          
             <div className="nav-items" key="user">
-            <ul>
-                <li>Home</li>
+            <ul style={styleObj}>
+                    <li>Home</li>
                 <li>About</li>
                 <li>Contact Us</li>
-                <li><img src={cart} alt="" /></li>
+                <li>Cart</li>
                </ul>
             </div>      
-    </div>
-)
+        </div>
+    )
+}
 
-const Layout = () => (
-    <div>
-    {
-    /**
+const BodyComponent = () => { 
+    return <h1>Body</h1>;
+}
+
+const FooterComponent = () => { 
+    return <h1>Footer</h1>;
+}
+/**
      * Header
      *  - Logo
      *  - Nav Items
@@ -47,9 +51,13 @@ const Layout = () => (
      *  - links
      *  - copyright
      */
-    }
+      
+const Layout = () => (
+    <React.Fragment>
         <HeaderComponent />
-        </div>
+        <BodyComponent />
+        <FooterComponent />
+    </React.Fragment>
 )
  
 const root = ReactDOM.createRoot(document.getElementById("root"));
