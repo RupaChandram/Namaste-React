@@ -38,6 +38,7 @@
 * name starts with small letter.
 * call it in {} in other Functional Componet 
 * Eg: 
+```js
 const header = (
                 <div>
                     <h1 id="heading1">Laying The Foundation</h1>
@@ -45,6 +46,7 @@ const header = (
                     <h3 id="heading3">h1,h2,h3 inside div with title</h3>
                 </div>
             )
+```
 
 ### Use of {}
 
@@ -76,15 +78,21 @@ const header = (
 ### Inline Style
 
 * Style in tag
-* <h1 style="color:red">Hello</h1>
+```html
+<h1 style="color:red">Hello</h1>
+```
 
 ### How to give inline style in JSX
 
-* const styleObj = {
+```js
+const styleObj = {
     color: "red"
 }
+```
 
-*  <ul style={styleObj}></ul>
+```html
+<ul style={styleObj}></ul>
+```
 
 
 
