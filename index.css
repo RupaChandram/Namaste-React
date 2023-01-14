@@ -1,3 +1,8 @@
+ * {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+ }
  .header {
    display: flex;
    justify-content: space-between;
@@ -17,4 +22,28 @@
  }
  .logo{
   width:6rem;
+ }
+ .card{
+  width:14rem;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+ }
+ .card>img{
+  width:100%;
+  
+ }
+ .restaurant-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.3rem;
+  margin: 1rem;
+  
+ }
+ .description{
+  color: #3d4152;
+ }
+ .name{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
  }

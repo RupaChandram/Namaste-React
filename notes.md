@@ -50,10 +50,39 @@ const header = (
 
 ### Use of {}
 
-* we can write any piece of javascript inside {}
+* we can write any piece of javascript inside {} but it should be Javascript expression not JS statement. 
 * we can pass react element there
 * We can write comment inside {} as well
 
+* dynamically specify the src or alt
+```js
+export default function Avatar() {
+  const avatar = 'https://i.imgur.com/7vQD0fPs.jpg';
+  const description = 'Gregorio Y. Zara';
+  return (
+    <img
+      className="avatar"
+      src={avatar}
+      alt={description}
+    />
+  );
+}
+```
+* Inline Styling
+
+```js
+export default function TodoList() {
+  return (
+    <ul style={{
+      backgroundColor: 'black',
+      color: 'pink'
+    }}>
+      <li>Work on the alcohol-fuelled engine</li>
+    </ul>
+  );
+}
+```
+[JSX with curley braces](https://beta.reactjs.org/learn/javascript-in-jsx-with-curly-braces)
 ### Is JSX, ES6, TS mandatory?
 
 * Not mandatory
@@ -74,6 +103,35 @@ const header = (
 * But it ugly to write <React.Fragment></React.Fragment>
 * Shorthand: <></> :)
 * You can't pass attribute or id to this.
+* Eg:
+
+```js
+render() {
+  return (
+    <React.Fragment>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </React.Fragment>
+  );
+}
+```
+shorthand syntax:
+
+```js
+
+class Columns extends React.Component {
+  render() {
+    return (
+      <>
+        <td>Hello</td>
+        <td>World</td>
+      </>
+    );
+  }
+}
+```
+link: [Fragment](https://reactjs.org/docs/fragments.html)
 
 ### Inline Style
 
@@ -90,9 +148,124 @@ const styleObj = {
 }
 ```
 
-```html
-<ul style={styleObj}></ul>
+```js
+const header = (
+                <div style={styleObj}>
+                    <h1 id="heading1">Laying The Foundation</h1>
+                    <h2 id="heading2">Nested Header Functional Component</h2>
+                    <h3 id="heading3">h1,h2,h3 inside div with title</h3>
+                </div>
+            )
 ```
+other way
+
+```js
+const header = (
+                <div style={{color: "red"}}>
+                    <h1 id="heading1">Laying The Foundation</h1>
+                    <h2 id="heading2">Nested Header Functional Component</h2>
+                    <h3 id="heading3">h1,h2,h3 inside div with title</h3>
+)
+                
+```
+### Three ways of writing css in react
+
+1. Inline styling
+2. with className 
+3. By using external library like Tailwind, Bootstrap etc.
+
+### Can I use React.Fragment inside React.Fragment
+
+* yes
+
+### join()
+
+* The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+
+
+```js
+const fruits=['grapes','apple'];
+```
+
+if you use fruits inside curley braces to evaluate, 
+
+{fruits} => o/p => grapesapple
+
+with join
+
+```js
+{fruits.join(", ")} 
+```
+o/p: grape, sapple
+
+link: [join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
+### JSON Viewer plugin
+
+* It will make your data prettier
+* Add it in chorme browser
+
+### Config-driven UI
+
+* You bind the data dynamically to the UI 
+* You control the UI using config 
+* API, Backend use config
+
+### Optional chaining
+
+* The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called is undefined or null, it returns undefined instead of throwing an error.
+
+```js
+const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName);
+// Expected output: undefined
+
+console.log(adventurer.someNonExistentMethod?.());
+// Expected output: undefined
+```
+link: [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+
+### props
+
+* props is a properties
+* Through props, we can pass data inside the component.
+* We can pass the data from parent component to child component.
+* props behaves like passing argument into a function
+
+### Functional component
+
+* It's just a function at the end the of day.
+
+### parameter and argument
+
+```js
+const add(param1,param2){
+}
+
+ add(argument1,argument2);
+```
+
+* You pass in arguments and recieve it in parameter.
+
+### Spread operators
+
+link: [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+### map
+
+* map is the best way to do functional programming.
+
+### Difference between map() and forEach()
+
+
+
 
 
 
