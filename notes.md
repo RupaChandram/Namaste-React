@@ -20,7 +20,7 @@
 * Name start with capital letter
 * Eg:
 
-        ```
+```js
         const Header = function () {
             return (
                 <div>
@@ -30,7 +30,7 @@
                 </div>
             )
         }
-        ```
+```
 
 ### React Element
 
