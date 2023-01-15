@@ -322,13 +322,13 @@ React uses Reconcilliation.
 no key(Not acceptable)<<<< index key(use only if you don't have anything)< unique key
 
 ### References
-[Code link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
-[React without JSX](https://reactjs.org/docs/react-without-jsx.html)
-[Virtual Dom](https://reactjs.org/docs/faq-internals.html)
-[Reconcilliation](https://reactjs.org/docs/reconciliation.html)
-[React Fiber](https://github.com/acdlite/react-fiber-architecture)
-[React without ES6](https://reactjs.org/docs/react-without-es6.html)
-[Index as a key is an anti pattern](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
+* [Code link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
+* [React without JSX](https://reactjs.org/docs/react-without-jsx.html)
+* [Virtual Dom](https://reactjs.org/docs/faq-internals.html)
+* [Reconcilliation](https://reactjs.org/docs/reconciliation.html)
+* [React Fiber](https://github.com/acdlite/react-fiber-architecture)
+* [React without ES6](https://reactjs.org/docs/react-without-es6.html)
+* [Index as a key is an anti pattern](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
 
 
 
