@@ -261,8 +261,82 @@ link: [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 ### map
 
 * map is the best way to do functional programming.
+* [map](https://github.com/RupaChandram/Namaste-JS/blob/main/ep-19-map-reduce-filter/notes.md)
 
 ### Difference between map() and forEach()
+
+### virtual DOM
+
+```html
+
+<head></head>
+  <body>
+    <Restaurant1 />
+    <Restaurant2 /> <img>
+  </body>
+  <footer />
+
+```
+```
+        O html
+      /   \     \
+    (h)   (b)   (F)
+          / \ 
+        R1   R2
+              |
+              img
+
+```
+* A representation of DOm is virtual DOM
+
+### Why do we need virtual DOM?
+* For Reconcilliation
+
+### Reconcilliation
+* React used the diff algorithm to find out the difference between trees(actual DOM and virtual DOM) and finds out what needs to be updated and just rerender the small portion.
+* This process is known as Reconcilliation.
+
+### Why is react fast?
+* React uses something known as virtual Dom
+* Virtual Dom is reresentation of your actual DOM. It's not your actual DOM.
+React uses Reconcilliation.
+* Reconcilliation is the process where we have a diff algorithm which finds out the difference between the trees
+* It will rerender the only portion that is required which is found by diff algo.
+* Works exactly as git diff.
+
+### Why do we use keys?
+* By giving the keys, diff algo knows exact place where needs to be rerender
+* We have to give keys to make react smart.
+* It can't accept duplicate keys
+* Give it unique id
+
+### React Fiber
+* In version 16, the diff algorithm changes a bit.
+* React introduced React Fiber
+* New Reconcilliation engine.
+
+### Can we use index as keys?
+* We can use but it's not recommended.
+* If you don't have unique thing then you can use index
+
+no key(Not acceptable)<<<< index key(use only if you don't have anything)< unique key
+
+### References
+[Code link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
+[React without JSX](https://reactjs.org/docs/react-without-jsx.html)
+[Virtual Dom](https://reactjs.org/docs/faq-internals.html)
+[Reconcilliation](https://reactjs.org/docs/reconciliation.html)
+[React Fiber](https://github.com/acdlite/react-fiber-architecture)
+[React without ES6](https://reactjs.org/docs/react-without-es6.html)
+[Index as a key is an anti pattern](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
+
+
+
+
+
+
+
+
 
 
 
