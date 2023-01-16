@@ -1,3 +1,36 @@
+### Topics to be covered
+* Command to run react app
+* JSX
+* Functional Component
+* React Element
+* Use of {}
+* Is JSX, ES6, TS mandatory?
+* use functional component
+* React.Fragement
+* inline style
+* How to give inline style in JSX
+* Three ways of writing css in react
+* Can I use React.Fragment inside React.Fragment
+* join()
+* JSON Viewer plugin
+* Config-driven UI
+* Optional chaining
+* props
+* Functional component
+* parameter and argument
+* Spread operators
+* map
+* Difference between map() and forEach()
+* virtual DOM
+* Why do we need virtual DOM?
+* Reconcilliation
+* Why is react fast?
+* Why do we use keys?
+* React Fiber
+* Can we use index as keys?
+* References
+* 
+
 ### Command to run react app
 
 * npm start
