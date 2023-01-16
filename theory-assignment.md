@@ -119,9 +119,9 @@ class Columns extends React.Component {
 | Ways to pass props to component | Ways to receive the props in another component | 
 | ------------------------------- | :--------------------------------:             | 
 | 1. Add props to the JSX, just like you would with HTML attributes  | All props are sent into a single props object  | 
-|  ```<Profile name = { "Harshi"} age={28}   />``` |  ``` const Profile = (props) => { let name = props.name; let age = props.age; } ``` |  
+|  ```<Profile name = { "Rupa"} age={28}   />``` |  ``` const Profile = (props) => { let name = props.name; let age = props.age; } ``` |  
 | 2.   Similar to the way mentioned in 1.          | Props object can be destructed using {} to receive only the required props| 
-| ```<Profile name = { "Harshi"} age={28}   />```  | ``` const Profile = ({name, age}) => { } ```    | 
+| ```<Profile name = { "Rupa"} age={28}   />```  | ``` const Profile = ({name, age}) => { } ```    | 
 | 3. Using spread syntax                           |  And props objects destructed using {}        |
 | ```<Profile {...props}   />```   | ``` const Profile = ({name, age}) => { } ```  |
 
