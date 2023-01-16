@@ -1,6 +1,6 @@
 ### Assignments
-* Is JSX mandatory for react 
-* Is ES6 mandatory for react 
+* Is JSX mandatory for react?
+* Is ES6 mandatory for react?
 * {TitleComponent} vs {<TitleComponent/>} vs {/TitleComponent} in JSX
 * How can i write comments in JSX?
 * What is <React.Fragment></React.Fragment> and <> </> ?

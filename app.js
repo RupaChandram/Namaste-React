@@ -1138,7 +1138,7 @@ const restaurantList=[
                 "subtype": "basic"
     }]
               
-const cloudImgCDN = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+const CLOUD_IMAGE_CDN = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
 const Title = () => (
     <a href="/" >
@@ -1168,7 +1168,7 @@ const HeaderComponent = () => {
 const RestaurantCard = ({name, cuisines,lastMileTravelString,avgRating,cloudinaryImageId}) => {
     return (
         <div className="card">
-            <img src={cloudImgCDN+cloudinaryImageId} alt="" />
+            <img src={CLOUD_IMAGE_CDN+cloudinaryImageId} alt="" />
             <h3 className="name">{name}</h3>
             <h5 className="description">{cuisines.join(', ')}</h5>
             <h5 className="description">{lastMileTravelString} minutes</h5>
@@ -1195,7 +1195,7 @@ const BodyComponent = () => {
    )
 }
 
-const FooterComponent = () => { 
+ FooterComponent = () => { 
     return <h1>Footer</h1>;
 }
 /**

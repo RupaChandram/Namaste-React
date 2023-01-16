@@ -29,7 +29,6 @@
 * React Fiber
 * Can we use index as keys?
 * References
-* 
 
 ### Command to run react app
 
