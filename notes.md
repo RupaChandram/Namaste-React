@@ -297,6 +297,29 @@ link: [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 * [map](https://github.com/RupaChandram/Namaste-JS/blob/main/ep-19-map-reduce-filter/notes.md)
 
 ### Difference between map() and forEach()
+* Both are methods of Array
+* Both are used to iterate the array
+* The first difference between map() and forEach() is the returning value. The forEach() method returns undefined and map() returns a new array with the transformed elements. Even if they do the same job, the returning value remains different.
+```js
+const myAwesomeArray = [1, 2, 3, 4, 5]
+const newArr = myAwesomeArray.forEach(x => x * x);
+console.log(newArr)
+
+const mapArr=myAwesomeArray.map(x => x * x)
+console.log(mapArr)
+
+```
+* The second difference between these array methods is the fact that map() is chainable. This means that you can attach reduce(), sort(), filter() and so on after performing a map() method on an array.
+
+That's something you can't do with forEach() because, as you might guess, it returns undefined.
+
+```js
+const myAwesomeArray = [1, 2, 3, 4, 5]
+myAwesomeArray.forEach(x => x * x).reduce((total, value) => total + value)
+//>>>>>>>>>>>>> Uncaught TypeError: Cannot read property 'reduce' of undefined
+myAwesomeArray.map(x => x * x).reduce((total, value) => total + value)
+//>>>>>>>>>>>>>return value: 55
+```
 
 ### virtual DOM
 
@@ -362,6 +385,7 @@ no key(Not acceptable)<<<< index key(use only if you don't have anything)< uniqu
 * [React Fiber](https://github.com/acdlite/react-fiber-architecture)
 * [React without ES6](https://reactjs.org/docs/react-without-es6.html)
 * [Index as a key is an anti pattern](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
+* [Difference between map and forEach](https://www.freecodecamp.org/news/4-main-differences-between-foreach-and-map/)
 
 
 
