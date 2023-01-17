@@ -1172,7 +1172,7 @@ const RestaurantCard = ({name, cuisines,lastMileTravelString,avgRating,cloudinar
             <h3 className="name">{name}</h3>
             <h5 className="description">{cuisines.join(', ')}</h5>
             <h5 className="description">{lastMileTravelString} minutes</h5>
-            <h5 className="description">Ratings: <b>{avgRating}</b></h5>
+            <h5 className="description">Ratings: <i class="fa-solid fa-star"></i><b>{avgRating}</b></h5>
         </div>
     )
 }
@@ -1196,7 +1196,12 @@ const BodyComponent = () => {
 }
 
  FooterComponent = () => { 
-    return <h1>Footer</h1>;
+   return (
+     <div className="footer">
+       <h4>Developed By Rupa</h4>
+       <h3 className="footerText">HungerBox</h3>     
+     </div>
+   );
 }
 /**
      * Header
