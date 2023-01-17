@@ -51,7 +51,7 @@
 
     => Hot Module Replacement (HMR) improves the development experience by automatically updating modules in the browser at runtime without needing a whole page refresh. 
     => This means that application state can be retained as you change small things. 
-=   => Parcel's HMR implementation supports both JavaScript and CSS assets.
+    => Parcel's HMR implementation supports both JavaScript and CSS assets.
 
 ### 8) List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
 
@@ -186,7 +186,7 @@
 
 
 ### References
-    ● Creating your own create-react-app: https://medium.com/@JedaiSaboteur/creating-a-react-app-from-scratch-f3c693b84658
-    ● Parcel Documentation: https://parceljs.org/getting-started/webapp/
-    ● Parcel on Production: https://parceljs.org/features/production/
-    ● BrowsersList: https://browserslist.dev
+* [Creating your own create-react-app](https://medium.com/@JedaiSaboteur/creating-a-react-app-from-scratch-f3c693b84658)
+* [Parcel Documentation](https://parceljs.org/getting-started/webapp/)
+* [Parcel on Production](https://parceljs.org/features/production/)
+* [BrowsersList](https://browserslist.dev)
