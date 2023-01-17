@@ -17,5 +17,144 @@
 ### React Fiber
 * Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM.
 * React Fiber is an ongoing reimplementation of React's core algorithm. It is the culmination of over two years of research by the React team
+* link: [React Fiber](https://github.com/acdlite/react-fiber-architecture)
+
+### Diffing algorithm
+* How is React so fast? So amenable? So receptive? The answer lies in the diffing algorithm
+* React uses a method called the diffing algorithm to compare the old DOM to the new. 
+* Diffing is a heuristic algorithm based on two assumptions:
+  1. Two elements of different types will produce different trees.
+  2. The developer can hint at what elements will remain stable across renders with a key prop. (This is why React is always warning us to include keys in our props).
+* link: [Diffing algorithm](https://javascript.plainenglish.io/reacts-diffing-algorithm-1a64cfefa4e0)
+
+### Importance of src folder
+* It's not necessary to create src folder in your app.
+* Everything can be done inside your project folder
+* But we need to wrap our code into a proper folder structure.
+* That gives us better modular approach.
+* That is how your code becomes mofular and findable
+* Otherwise when there are thousand files in your app, Sometimes your app goes very big with hunderds of files. so it becomes very difficult to find things out.
+* This is the common convention which is used in the industry. It's not required but we always practice so that all developers can relate to it and pick it up the file organization. 
+
+### Is there any recommended way to structure the folder?
+* React doesn’t have opinions on how you put files into folders. That said there are a few common approaches popular in the ecosystem you may want to consider.
+  1. Grouping by features or routes: One common way to structure projects is to locate CSS, JS, and tests together inside folders grouped by feature or route.
+```
+common/
+  Avatar.js
+  Avatar.css
+  APIUtils.js
+  APIUtils.test.js
+feed/
+  index.js
+  Feed.js
+  Feed.css
+  FeedStory.js
+  FeedStory.test.js
+  FeedAPI.js
+```
+  2. Grouping by file type
+ ```
+  api/
+  APIUtils.js
+  APIUtils.test.js
+  ProfileAPI.js
+  UserAPI.js
+components/
+  Avatar.js
+  Avatar.css
+  Feed.js
+  Feed.css
+  FeedStory.js
+  FeedStory.test.js
+  Profile.js
+  ProfileHeader.js
+  ProfileHeader.css
+```
+* Avoid too much nesting
+* If you’re just starting a project, don’t spend more than five minutes on choosing a file structure. Pick any of the above approaches (or come up with your own) and start writing code! You’ll likely want to rethink it anyway after you’ve written some real code.
+* link : [File Structure](https://reactjs.org/docs/faq-structure.html)
+
+### steps to create component
+* Create a file.
+* Write your code inside that file.
+* Export that file.
+* import in other component.
+
+### How to export
+* Two ways of exporting
+  1. export default
+    ```js 
+    export default TitleComponent;
+    ```
+    call : ``` import HeaderComponent from "../src/components/header-component/header"; ```
+  2. Named export
+  ```js
+  export const TitleComponent = () => (
+    <a href="/" >
+        <img className="logo" src={logo} alt="Logo" />
+    </a>)
+    ```
+  
+  call : ``` import {HeaderComponent} from "../src/components/header-component/header"; ```
+   `{HeaderComponent}` is not an object destructuring.
+
+*  if you want to export everything from a file then use *
+eg: `import * as obj from "../src/components/header-component/header";`
+use: <obj.Header/>
+That's why we write <React.Fragment><React.Fragment/>
+
+* if you want to import 2 or 3 things from a file.
+
+eg: `import {TltleComponent, HeaderComponent} from "../src/components/header-component/header";`
+
+* If you want to use named and default together
+
+eg: `import TltleComponent, {HeaderComponent} from "../src/components/header-component/header";`
+
+* You can rename (namespace) but donn't do it. It's a best practice to have same name as exported name.
+
+eg: `import NewHeader from "../src/components/header-component/header";`
+
+* You can write .js or .jsx or .ts or .tsx in the path
+
+eg: `import Header from "../src/components/header-component/header.js";`
+eg: `import Header from "../src/components/header-component/header.jsx";`
+
+* When you are in the same file ypu don't need to export.
+
+### State
+* Every component in a react maintans a state
+* You can put the variable with its state, if you want to change a variable in react.
+
+### useState hook
+* Written by facebook developer.
+* To create local state vaiable, we use useState.
+* Returns an array and first element would be your variable name.
+* import from react library with named export.
+* React can't keep tracking of each variable. React will track the state variables then react will destroy existing one automatically rerender the component with the help of reconcilliation.
+* There is one way data binding in react not two way like angular so we need useState.
+* Good for optimization
+
+Normal variable in JS
+
+```js
+const searchText="KFC";
+```
+Variable in React
+
+```js
+import {useState} from "react";
+const [searchText,setSearchText]=useState("KFC");//[variable name, function to update the variable]
+```
+### Hooks
+* just a normal function. Thar's why we call it as useState() but it has specific function for it.
+* import it as named export
+
+
+
+### References
+* [Reconcilliation](https://reactjs.org/docs/reconciliation.html)
 * [React Fiber](https://github.com/acdlite/react-fiber-architecture)
-### diff algo
+* [Diffing algorithm](https://javascript.plainenglish.io/reacts-diffing-algorithm-1a64cfefa4e0)
+* [File Structure](https://reactjs.org/docs/faq-structure.html)
