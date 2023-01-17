@@ -53,7 +53,7 @@
 
     => If the type attribute contains any other value, then the code is treated as data block and will not be processed by the browser. A valid MIME type other than Javascript MIME type (Eg: image/png or text/css) must be mentioned. All the other attributes for this type will be ignored even the src attribute.
 
-### 4. { TitleComponent } vs ```html {<TitleComponent />} ``` vs ```html {<TitleComponent> </TitleComponent>}``` in JSX
+### 4. { TitleComponent } vs ``` {<TitleComponent />} ``` vs ``` {<TitleComponent> </TitleComponent>}``` in JSX
 
     => { TitleComponent } - This value in jsx is considered as jsx expression or variable. 
     => <Component /> - This is used to render the component
