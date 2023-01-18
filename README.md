@@ -26,6 +26,6 @@
 - Theory assignment: theory-assignment.md
 - Coding steps: code.md
 
-### Live link : [lets get hooked](https://wondrous-biscochitos-e76758.netlify.app/)
+### Live link : [lets get hooked](https://react-hungerbox-chapter-05.netlify.app/)
 
 
