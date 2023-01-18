@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import logo from "./assets/images/hunger-box.png"
-import cart from "./assets/images/cart.png"
 //Config-driven UI
 const restaurantList=[
               {
@@ -1646,8 +1645,8 @@ const RestaurantCard = ({name, cuisines,lastMileTravelString,avgRating,cloudinar
             <img src={CLOUD_IMAGE_CDN+cloudinaryImageId} alt="" />
             <h3 className="name">{name}</h3>
             <h5 className="description">{cuisines.join(', ')}</h5>
-            <h5 className="description">{lastMileTravelString} minutes</h5>
-            <h5 className="description">Ratings: <i class="fa-solid fa-star"></i><b>{avgRating}</b></h5>
+            <h5 className="description">{lastMileTravelString}</h5>
+            <h5 className="description">Ratings:<b>{avgRating}</b></h5>
         </div>
     )
 }
@@ -1670,7 +1669,7 @@ const BodyComponent = () => {
    )
 }
 
- FooterComponent = () => { 
+const FooterComponent = () => { 
    return (
      <div className="footer">
        <h4>Developed By Rupa</h4>
