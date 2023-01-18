@@ -1,9 +1,11 @@
-## React Learning Journey
-* This repo is for learning purpose. All learnings from Namaste React would be kept here. 
-* Started my learning journey of React by cool instructor Akshay Saini.
-* The way he explains each and everything is just crystal clear.
-* He makes the develoer to love coding.
+## Chapter 1 - Inception (24/12/2022)
 
-Want to learn react ??
+### Topics that are covered in Chapter-01 (Inception)
+* Setup the evironment. It does mean using `npx create react-app`. Need to do without installing any package.
+* To create simple Hello world program with HTML.
+* To create simple Hello program with JS
+* To create simple Hello program with React
 
-Checkout to my branches
+#### Checkout md file for theories or notes.
+### Live link : Coming soon...
+### Happy coding !!!
