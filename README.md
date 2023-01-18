@@ -13,5 +13,7 @@ Checkout to my branches
 
 |Chapters  |  Description | Live link  | Sources  |
 |----------|--------------|------------|----------|
-|Chapter-01|To create hello world program through html, js and pure react.   |[inception](https://rupachandram.github.io/React-Chapter-01-Inception/)  | [Inception-soucre](https://github.com/RupaChandram/Namaste-React/tree/class-1-react-inception)  | 
-|Chapter-02|To ignite the app through bundlers(parcel). To create our own react app without using `npx create react-app`. Importance of parcel.    |[igniting-the-app](https://react-chapter-02-igniting-the-app.netlify.app/)  |[Igniting-the-app-sources](https://github.com/RupaChandram/Namaste-React/tree/class-2-igniting-react-app)  |  
+|Chapter-01: Inception |To create hello world program through html, js and pure react.   |[inception](https://rupachandram.github.io/React-Chapter-01-Inception/)  | [Inception-soucres](https://github.com/RupaChandram/Namaste-React/tree/class-1-react-inception)  | 
+|Chapter-02: Igniting the app|To ignite the app through bundlers(parcel). To create our own react app without using `npx create react-app`. Importance of parcel.    |[igniting-the-app](https://react-chapter-02-igniting-the-app.netlify.app/)  |[Igniting-the-app-sources](https://github.com/RupaChandram/Namaste-React/tree/class-2-igniting-react-app)  | 
+|Chapter-03 : Laying the foundation | Using JSX, creating components, Babel, Features of parcel, Reconcilliation, node_modules|[laying-the-foundation](https://react-ch-03-laying-the-foundation.netlify.app/)|[Laying-the-foundation](https://github.com/RupaChandram/Namaste-React/tree/class-3-laying-the-foundation)|
+
