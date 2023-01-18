@@ -18,11 +18,14 @@
 * State
 * React Hooks
 * useState Hook
-* Filter function
+* Filter function based on search input
+* Add error message when restaurant doesn't exist in the list.
 ### Have a look in .md files
 - Question : question.md
 - Notes : notes.md
 - Theory assignment: theory-assignment.md
 - Coding steps: code.md
+
+### Live link : [lets get hooked](https://wondrous-biscochitos-e76758.netlify.app/)
 
 
