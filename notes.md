@@ -5,7 +5,7 @@
 * Pollyfill
 * .gitignore
 * Super powers of parcel
-* Tree shanking
+* Tree shaking
 * Webpack
 * Build performant web scalable app
 * command to run the project

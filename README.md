@@ -1,9 +1,28 @@
 ### Class Summary Chapter - 03 Laying the foundation (01/01/2023)
-* Chapter-03 started with revising the previous sessions and doubts raised in the previous sessions were addressed. 
-* Babel/Polyfills and their usage were explained. Scripts were written for starting and building the app. 
-* Steps to install a npm package were walked through. JSX vs React.createElement() vs Components were discussed in depth.
-* It was a truely knowledge heavy session with lot of new concepts and keywords.
+* Topics that are covered in this session:
+    - Recap of previous class
+    - Babel/polyfills and their uses
+    - .gitignore
+    - Super powers of parcel
+    - Tree shaking
+    - Webpack
+    - Build performant web scalable app
+    - command to run the project(`npm start` or `npx parcel index.html`)
+    - JSX vs React.createElement()
+    - node_module (package.json)
+    - React Components
+        - Function components
+        - Composing Component
+    - React Reconcilliation
+    - {{}} - how 2 parenthesis work
 
-* One line about this chapter : JSX is NOT html inside js but syntactic sugar for the React object
+* One line about this chapter : `JSX is NOT html inside JS but its a html like syntax inside JS`.
 
-* If you have any queries/suggestions about my version of this course, please feel free to raise PR. Happy coding !!!
+* How to get live link:
+
+first delete dist folder, then open your terminal or cmd type npm run build so it creates new dist folder now open netlify and click on new site deploy by uploading folder and just paste this dist folder. now your site is live.
+
+* Live link : [Chapter-03-laying-the-foundation](https://celadon-mermaid-fc5c7b.netlify.app/)
+
+#### Happy coding...!!!
+
