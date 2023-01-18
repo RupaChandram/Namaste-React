@@ -83,12 +83,13 @@ components/
 
 ### How to export
 * Two ways of exporting
-  1. Default export
+  * Default export
     ```js 
     export default TitleComponent;
     ```
     call : ``` import HeaderComponent from "../src/components/header-component/header"; ```
-  2. Named export
+    
+  * Named export
   ```js
   export const TitleComponent = () => (
     <a href="/" >
