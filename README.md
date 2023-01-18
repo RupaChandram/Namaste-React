@@ -11,5 +11,5 @@
 
 * command to run the app : `npx parcel index.html`(npx parcel entry-point)
 
-### live link : [Igniting the app](https://imaginative-rolypoly-e52687.netlify.app/)
+### live link : [Igniting the app](https://react-chapter-02-igniting-the-app.netlify.app/)
 ### Happy coding !!!
