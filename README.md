@@ -1,9 +1,15 @@
-## React Learning Journey
-* This repo is for learning purpose. All learnings from Namaste React would be kept here. 
-* Started my learning journey of React by cool instructor Akshay Saini.
-* The way he explains each and everything is just crystal clear.
-* He makes the develoer to love coding.
+### Class Summary Chapter - 02 Igniting React App (31/12/2022)
 
-Want to learn react ??
+### Topics that are covered in Chapter-02 
+* creating production-ready react app from scratch without using `npx create react-app`. 
+* The concept of bundlers (Parcel). 
+* We all assume React is the one superpower that makes the application faster, though it is partially right, the major credit goes to the other packages/helper utilities (Bundler) for speeding up the application, optimizing the code, improving the performance and lots more. Find the other interesting powerful featured of bundler in class notes.
+* npm initialization
+* installation of React and ReactDom
+* installation of parcel
+* Igniting the app 
 
-Checkout to my branches
+* command to run the app : `npx parcel index.html`(npx parcel entry-point)
+
+### live link : [Igniting the app](https://react-chapter-02-igniting-the-app.netlify.app/)
+### Happy coding !!!
