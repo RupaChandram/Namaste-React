@@ -1,6 +1,6 @@
 import RestaurantCard from "../restaurant-card-component/restaurant-card"
 import { restaurantList } from "../config/config"
-import { useState } from "react";
+import { useState } from "react";/** Named Export*/
 
 const filterData = (searchText, restaurants) => {
   return restaurants.filter(restaurant => restaurant.data.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -36,8 +36,7 @@ const BodyComponent = () => {
         <span className="error-msg" id="error-msg">{errorMsg}</span>
       </div> 
     }
-            
-            
+                    
        <div className="restaurant-list">
         {
             restaurants.map((restaurant) => {

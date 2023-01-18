@@ -6,7 +6,7 @@ export const TitleComponent = () => (
     </a>
 )
 
-const HeaderComponent = () => {
+export const HeaderComponent = () => {
     return(
     <div className="header">
             <TitleComponent />      

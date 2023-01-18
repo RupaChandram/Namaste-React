@@ -1,5 +1,4 @@
 ## Class Summary Chapter - 05 Let's get hooked (08/01/2023)
-
 ### Topics that are covered in class 5
 * Recap of previous class
     * React.Fragment
@@ -15,10 +14,15 @@
     * created src folder and kept the code inside it
     * created components
     * config/constant to keep hard coded thing there
-* Build searchbar
+* Build search bar
 * State
 * React Hooks
 * useState Hook
-
+* Filter function
+### Have a look in .md files
+Question : question.md
+Notes : notes.md
+Theory assignment: theory-assignment.md
+Coding steps: code.md
 
 

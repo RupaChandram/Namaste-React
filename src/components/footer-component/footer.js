@@ -1,4 +1,4 @@
-FooterComponent = () => { 
+export const FooterComponent = () => { 
    return (
      <div className="footer">
        <h4>Developed By Rupa</h4>
@@ -7,4 +7,3 @@ FooterComponent = () => {
    );
 }
 
-export default FooterComponent;

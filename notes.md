@@ -32,7 +32,7 @@
 * Everything can be done inside your project folder
 * But we need to wrap our code into a proper folder structure.
 * That gives us better modular approach.
-* That is how your code becomes mofular and findable
+* That is how your code becomes modular and findable
 * Otherwise when there are thousand files in your app, Sometimes your app goes very big with hunderds of files. so it becomes very difficult to find things out.
 * This is the common convention which is used in the industry. It's not required but we always practice so that all developers can relate to it and pick it up the file organization. 
 
@@ -83,7 +83,7 @@ components/
 
 ### How to export
 * Two ways of exporting
-  1. export default
+  1. Default export
     ```js 
     export default TitleComponent;
     ```
@@ -112,7 +112,7 @@ eg: `import {TltleComponent, HeaderComponent} from "../src/components/header-com
 
 eg: `import TltleComponent, {HeaderComponent} from "../src/components/header-component/header";`
 
-* You can rename (namespace) but donn't do it. It's a best practice to have same name as exported name.
+* You can rename (namespace) but don't do it. It's a best practice to have same name as exported name.
 
 eg: `import NewHeader from "../src/components/header-component/header";`
 
@@ -132,7 +132,7 @@ eg: `import Header from "../src/components/header-component/header.jsx";`
 * To create local state vaiable, we use useState.
 * Returns an array and first element would be your variable name.
 * import from react library with named export.
-* React can't keep tracking of each variable. React will track the state variables then react will destroy existing one automatically rerender the component with the help of reconcilliation.
+* React can't keep tracking of each variable. React will track the state variables then react will destroy existing one automatically rerender the component with the help of reconcilliation (diffing algorithm). It means When you creating the variable using useState, React watches this variable or keeps a track of that variable and whenever you changes the variable then component rerenders.
 * There is one way data binding in react not two way like angular so we need useState.
 * Good for optimization
 
@@ -148,13 +148,20 @@ import {useState} from "react";
 const [searchText,setSearchText]=useState("KFC");//[variable name, function to update the variable]
 ```
 ### Hooks
-* just a normal function. Thar's why we call it as useState() but it has specific function for it.
+* just a normal function. That's why we call it as `useState()` but it has specific function for it.
 * import it as named export
 
-
+### Flow of Search function with useState
+* When you click on search button, it sees the current search text. let's say "King".
+* It pass "King" as well as list of all the restaurant to my filterData().
+* My filterData() find out the data if exists in restaurant list.
+* filterData gives filtered restaurant list to onClick function.
+* Then I set my data to my restaurants
+* Then component rerenders.
 
 ### References
 * [Reconcilliation](https://reactjs.org/docs/reconciliation.html)
 * [React Fiber](https://github.com/acdlite/react-fiber-architecture)
 * [Diffing algorithm](https://javascript.plainenglish.io/reacts-diffing-algorithm-1a64cfefa4e0)
 * [File Structure](https://reactjs.org/docs/faq-structure.html)
+* [useState](https://reactjs.org/docs/hooks-state.html)

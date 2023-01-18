@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-//default export
-import HeaderComponent from "../src/components/header-component/header";
-import FooterComponent from "../src/components/footer-component/footer";
-import BodyComponent from "../src/components/body-component/body"
+import * as MainHeader from "../src/components/header-component/header"; 
+import {FooterComponent as Footer} from "../src/components/footer-component/footer"; /* Imported using Named Import Map */
+import BodyComponent from "../src/components/body-component/body"; /* Imported using default export */
 
 /**
      * Header
@@ -24,9 +23,9 @@ import BodyComponent from "../src/components/body-component/body"
       
 const Layout = () => (
     <React.Fragment>
-        <HeaderComponent />
+        <MainHeader.HeaderComponent />
         <BodyComponent />
-        <FooterComponent />
+        <Footer />
     </React.Fragment>
 )
  
