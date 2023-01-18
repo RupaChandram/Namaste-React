@@ -20,9 +20,9 @@
 * useState Hook
 * Filter function
 ### Have a look in .md files
-Question : question.md
-Notes : notes.md
-Theory assignment: theory-assignment.md
-Coding steps: code.md
+- Question : question.md
+- Notes : notes.md
+- Theory assignment: theory-assignment.md
+- Coding steps: code.md
 
 
