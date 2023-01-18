@@ -88,7 +88,7 @@ components/
     export default TitleComponent;
     ```
     call : ``` import HeaderComponent from "../src/components/header-component/header"; ```
-    
+
   * Named export
   ```js
   export const TitleComponent = () => (
@@ -122,7 +122,7 @@ eg: `import NewHeader from "../src/components/header-component/header";`
 eg: `import Header from "../src/components/header-component/header.js";`
 eg: `import Header from "../src/components/header-component/header.jsx";`
 
-* When you are in the same file ypu don't need to export.
+* When you are in the same file you don't need to export.
 
 ### State
 * Every component in a react maintans a state
