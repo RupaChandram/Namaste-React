@@ -23,4 +23,17 @@
     height: 1.5rem;
     border-radius: 5px;
  }
- 
+ /* Responsive layout */
+ @media (max-width: 800px) {
+   .header {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+      
+    }
+       .searchbar {
+          width: 18rem;
+          height: 1.5rem;
+          border-radius: 5px;
+       }
+ }
