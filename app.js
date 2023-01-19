@@ -49,7 +49,7 @@ const list5 = React.createElement(
    {
      id: "description",
    },
-   [list1,list2,list2,list4,list5]
+   [list1,list2,list3,list4,list5]
 );
 
  const container = React.createElement(
