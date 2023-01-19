@@ -22,7 +22,7 @@
 
 first delete dist folder, then open your terminal or cmd type npm run build so it creates new dist folder now open netlify and click on new site deploy by uploading folder and just paste this dist folder. now your site is live.
 
-* Live link : [Chapter-03-laying-the-foundation](https://react-ch-03-laying-the-foundation.netlify.app/)
+* Live link : [Chapter-03-laying-the-foundation](https://chapter-03-laying-the-foundation.netlify.app/)
 
 #### Happy coding...!!!
 
