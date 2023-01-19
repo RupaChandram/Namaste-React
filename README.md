@@ -34,7 +34,7 @@
 * React Fiber
 * Can we use index as keys?
 
-### Live link : [Talk is cheap. Show me the code (HungerBox)](https://chapter-04-hungerbox.netlify.app/)
+### Live link : [Talk is cheap. Show me the code (HungerBox)](https://chapter-04-hunger-box-app.netlify.app/)
 
 ### Checkout to my branches to learn more. Theories are in .md files.
 
