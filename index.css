@@ -60,3 +60,21 @@
   margin:1rem;
   color: brown;
  }
+ /* Extra small devices (phones, 600px and down) */ 
+ @media only screen and (max-width: 600px) {
+   .logo {
+         width: 5rem;
+      }
+    .card {
+       flex-basis: 167px;
+       flex-wrap: wrap;
+       
+    }
+   .nav-items>ul>li {
+      padding: 0.5rem;
+      font-weight: 400;
+      font-size: medium;
+
+   }
+
+ }
