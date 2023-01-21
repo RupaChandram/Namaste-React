@@ -1,35 +1,66 @@
 import RestaurantCard from "../restaurant-card-component/restaurant-card"
-import { restaurantList } from "../config/config"
-import { useState } from "react";/** Named Export*/
+import { GET_RESTAURANTS } from "../config/config"
+import { useState,useEffect } from "react";/** Named Export*/
+import Shimmer from "../shimmer-component/shimmer";
 
 const filterData = (searchText, restaurants) => {
-  return restaurants.filter(restaurant => restaurant.data.name.toLowerCase().includes(searchText.toLowerCase()));
+  return restaurants.filter(restaurant => restaurant?.data?.name?.toLowerCase().includes(searchText.toLowerCase()));
 }
 
-const BodyComponent = () => { 
-    const [searchInput, setSearchInput] = useState();
-    const [restaurants, setRestaurants] = useState(restaurantList);
-    const [errorMsg, setErrorMsg] = useState('');
 
-    const searchData = (searchText, restaurants ) => ()=> {  
+const BodyComponent = () => { 
+  const [searchInput, setSearchInput] = useState();
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [errorMsg, setErrorMsg] = useState(''); 
+  
+  //empty dependency array => Once after render
+  // dependency [searchText] =>once after initial render + everytime after rerender (change in searchText )
+  useEffect(() => {
+    getRestaurants();
+}, [])
+  
+  async function getRestaurants() {
+    try {
+      const data = await fetch(GET_RESTAURANTS);
+      const json = await data.json();
+
+      setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+    
+
+    const searchData = (searchText, allRestaurants ) => ()=> {  
     if(searchText !== '') {
-    const data = filterData(searchText,restaurants);
-    setRestaurants(data); 
+    const data = filterData(searchText,allRestaurants);
+    setFilteredRestaurants(data); 
     if (data.length === 0) {
       setErrorMsg('No matches found ');
     }
   } else {
       if(errorMsg) setErrorMsg('');
-      setRestaurants(restaurantList);
+      setFilteredRestaurants(allRestaurants);
     }
   }
-    return (
+
+  //early return
+  if (!allRestaurants) return null;
+
+  // Conditional Rendering
+  // If restuarants is empty => Shimmer UI
+  // If restaurants has data => Actual shimmer UI
+
+    return (allRestaurants?.length===0)?<Shimmer/> : (
     <>
         <div className="search-container">
                 <input type="text" className="search-input" placeholder="search here" value={searchInput} onChange={(e) => {
                     setSearchInput(e.target.value)
                 } } />
-                <button className="search-btn" onClick={searchData(searchInput, restaurants)}>search</button>
+                <button className="search-btn" onClick={searchData(searchInput, allRestaurants)}>search</button>
             </div>
             { errorMsg && 
       <div className="error-container" id="error">
@@ -39,7 +70,7 @@ const BodyComponent = () => {
                     
        <div className="restaurant-list">
         {
-            restaurants.map((restaurant) => {
+            filteredRestaurants.map((restaurant) => {
                 return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
             })
         }

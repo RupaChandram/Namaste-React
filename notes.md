@@ -1,168 +1,254 @@
-### what are empty brackets(<></>)?
-* React.Fragment
-* React Fragment is a feature in React that allows you to return multiple elements from a React component by allowing you to group a list of children without adding extra nodes to the DOM.
-* We can write multiple element without inserting extra div.
-* It comes from our react library.
-* How to use: <React.Fragment></React.Fragment>
-* Shothand: <></>
+### Topics that are covered: 
+* Recap of previous chapter
+  * config-driven-ui
+  * useState()
+  * Virtual DOM
+  * Diffing Algorithm
+  * React Fiber
+  * Why react is fast?
+  * Hooks
+* Monolithic architecture
+* Microservices archtecture
+* How different projects get connected?
+* how do we call the api in JS
+* useEffect hook
+* async
+* optional chaining
+* Shimmer Effect
+* UX/UI
+* Conditional Rendering
+* filter states varibles
+* How do you avoid rendering component?
+  * early render
+* References
+
+
+### Recap:
+- Created food ordering app kind of swiggy app
+- We can see the list of restaurant.
+- Implemented Config-driven UI: powerful way of building web app. Every big companies uses this.
+- useState for restaurant
+
+### config-driven-ui
+- config is nothing but a json object. Either we get that config from the backend or we pass the hardcoded config in a proper manner in frontend app.
+- any config can power the app. 
+- Generally we get config from api call
+- Eg: config.js
+
+### useState()
+- Hooks are normal JS function
+- FB developer gives extra functionality to this function
+- Whenever there is something changes on the UI, we need local state to handle that.
+- eg. If I have created one title and we want to change the title on the click button then it won't give proper output if we have create normal variable. React doesn't track normal variable. We need to create state variable for that.
+- This can update the title but then we need to keep our ui in the sync with the data. We need to keep the ui in sync with state.
+- For that sync, we need state.
+
+- use:
+    - import with named import
+
+```js
+import {useState} from 'react';
+```
+ -  Array destructuring: React retuns array for useState. Gives 2 things
+    1. state variable
+    2. function that would modified the state variable
+ - you can pass intial value to put in this variable
+
+```js
+const [title,setTitle]=useState("Food Villa");
+<button onClick={()=>setTitle("HungerBox")}>click</button>
+```
+ - flow:
+    - Intial value is Food Villa
+    - Once we click on the button setTitle() gets called.
+    - it changes the value with reconcilliation
+    - it rerenders the component. Check with console log inside the component.
+    - just update the title only 
 
 ### Virtual DOM
-* Representation of actual dom.
-* Representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. 
-* This process is called reconciliation.
+- Representation of actual DOM
+- Elements are represented by a tree.
+- kind of JS object.
+- Whenever there is change in the state, tree get modified and react will rerender 
 
-### Reconciliation
-* The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+### Diff algo
+- Reconcilliation uses diff algo
+- current tree is compared with the updated tree
+- whatever the difference is there that is reflected on the DOM
 
 ### React Fiber
-* Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM.
-* React Fiber is an ongoing reimplementation of React's core algorithm. It is the culmination of over two years of research by the React team
-* link: [React Fiber](https://github.com/acdlite/react-fiber-architecture)
+- updated reconcilliation algorithm
 
-### Diffing algorithm
-* How is React so fast? So amenable? So receptive? The answer lies in the diffing algorithm
-* React uses a method called the diffing algorithm to compare the old DOM to the new. 
-* Diffing is a heuristic algorithm based on two assumptions:
-  1. Two elements of different types will produce different trees.
-  2. The developer can hint at what elements will remain stable across renders with a key prop. (This is why React is always warning us to include keys in our props).
-* link: [Diffing algorithm](https://javascript.plainenglish.io/reacts-diffing-algorithm-1a64cfefa4e0)
+### Why react is fast?
+- fast DOM manipulation because of diff algo/react fiber
 
-### Importance of src folder
-* It's not necessary to create src folder in your app.
-* Everything can be done inside your project folder
-* But we need to wrap our code into a proper folder structure.
-* That gives us better modular approach.
-* That is how your code becomes modular and findable
-* Otherwise when there are thousand files in your app, Sometimes your app goes very big with hunderds of files. so it becomes very difficult to find things out.
-* This is the common convention which is used in the industry. It's not required but we always practice so that all developers can relate to it and pick it up the file organization. 
-
-### Is there any recommended way to structure the folder?
-* React doesn’t have opinions on how you put files into folders. That said there are a few common approaches popular in the ecosystem you may want to consider.
-  1. Grouping by features or routes: One common way to structure projects is to locate CSS, JS, and tests together inside folders grouped by feature or route.
-```
-common/
-  Avatar.js
-  Avatar.css
-  APIUtils.js
-  APIUtils.test.js
-feed/
-  index.js
-  Feed.js
-  Feed.css
-  FeedStory.js
-  FeedStory.test.js
-  FeedAPI.js
-```
-  2. Grouping by file type
- ```
-  api/
-  APIUtils.js
-  APIUtils.test.js
-  ProfileAPI.js
-  UserAPI.js
-components/
-  Avatar.js
-  Avatar.css
-  Feed.js
-  Feed.css
-  FeedStory.js
-  FeedStory.test.js
-  Profile.js
-  ProfileHeader.js
-  ProfileHeader.css
-```
-* Avoid too much nesting
-* If you’re just starting a project, don’t spend more than five minutes on choosing a file structure. Pick any of the above approaches (or come up with your own) and start writing code! You’ll likely want to rethink it anyway after you’ve written some real code.
-* link : [File Structure](https://reactjs.org/docs/faq-structure.html)
-
-### steps to create component
-* Create a file.
-* Write your code inside that file.
-* Export that file.
-* import in other component.
-
-### How to export
-* Two ways of exporting
-  * Default export
-    ```js 
-    export default TitleComponent;
-    ```
-    call : ``` import HeaderComponent from "../src/components/header-component/header"; ```
-
-  * Named export
-  ```js
-  export const TitleComponent = () => (
-    <a href="/" >
-        <img className="logo" src={logo} alt="Logo" />
-    </a>)
-    ```
-  
-  call : ``` import {HeaderComponent} from "../src/components/header-component/header"; ```
-   `{HeaderComponent}` is not an object destructuring.
-
-*  if you want to export everything from a file then use *
-eg: `import * as obj from "../src/components/header-component/header";`
-use: <obj.Header/>
-That's why we write <React.Fragment><React.Fragment/>
-
-* if you want to import 2 or 3 things from a file.
-
-eg: `import {TltleComponent, HeaderComponent} from "../src/components/header-component/header";`
-
-* If you want to use named and default together
-
-eg: `import TltleComponent, {HeaderComponent} from "../src/components/header-component/header";`
-
-* You can rename (namespace) but don't do it. It's a best practice to have same name as exported name.
-
-eg: `import NewHeader from "../src/components/header-component/header";`
-
-* You can write .js or .jsx or .ts or .tsx in the path
-
-eg: `import Header from "../src/components/header-component/header.js";`
-eg: `import Header from "../src/components/header-component/header.jsx";`
-
-* When you are in the same file you don't need to export.
-
-### State
-* Every component in a react maintans a state
-* You can put the variable with its state, if you want to change a variable in react.
-
-### useState hook
-* Written by facebook developer.
-* To create local state vaiable, we use useState.
-* Returns an array and first element would be your variable name.
-* import from react library with named export.
-* React can't keep tracking of each variable. React will track the state variables then react will destroy existing one automatically rerender the component with the help of reconcilliation (diffing algorithm). It means When you creating the variable using useState, React watches this variable or keeps a track of that variable and whenever you changes the variable then component rerenders.
-* There is one way data binding in react not two way like angular so we need useState.
-* Good for optimization
-
-Normal variable in JS
-
-```js
-const searchText="KFC";
-```
-Variable in React
-
-```js
-import {useState} from "react";
-const [searchText,setSearchText]=useState("KFC");//[variable name, function to update the variable]
-```
 ### Hooks
-* just a normal function. That's why we call it as `useState()` but it has specific function for it.
-* import it as named export
+- Normal javascript function.
+- written by facebook developer.
+What we are going to explore:
 
-### Flow of Search function with useState
-* When you click on search button, it sees the current search text. let's say "King".
-* It pass "King" as well as list of all the restaurant to my filterData().
-* My filterData() find out the data if exists in restaurant list.
-* filterData gives filtered restaurant list to onClick function.
-* Then I set my data to my restaurants
-* Then component rerenders.
+### Monolithic architecture
+- In old days, there used to be single huge application. 
+- Eg: In 1 project- same project for ui, same for backend, api etc
+- deploy: omggggg. for single button changes, it needs to be deploy whole project. Such a big mess.
+- So this type of application is known as monolithic
 
+### Microservices archtecture
+- Instead of having 1 project, now we can have small small projects.
+- eg: separate project for authentication, separate for sms, separate for backend, logs, apis even databaseds can have replica.
+- advantage: easier to maintain, easy to deploy, easy to check, separation of concern, single responsibilities, can be used different language like ui-react,log-golang, authentication- python etc.
+
+#### HungerBox is ui- microservice
+
+### How different projects get connected?
+- mapped with different port numbers with same domain name sometimes with different domain names as well
+### how do we call the api in JS
+- fetch :  function of Window object, pre built, browser api, pass api and call the api.
+- promises
+- ajax
+### Make the api call
+- let's take an example : I have a body componenet where I have listed the restaurants and there is a filter function on button click
+inside the body component then we should not call the api inside the component because on every click it will rerendere the component and if you have called your api inside that component then on every click, api will be called. Basically, components get rerender on every small change.
+- when to call: As when my page loads, call an api and fill the data.
+- don't call inside component because for every change it get's executed.
+
+loads--> api--> render the page(bad approach)
+loads ---> render ----> api---> update ui (good approach)
+- use useEffect hook 
+
+### useEffect hook
+- hook (function)
+- use as function by passing 2 parameters 
+    1. another function(callbacks): this callback function would be not called immediately but whenever my useEffect would be called.
+    2. dependency array: when you don't to rerender on every changes then pass dependency.
+     
+- import it via named import from react library
+- there are 2 times when component rerenders either state changes or props changes.
+- whenever it rerenders ,useEffect() gets called
+- When you don't want to get called in every rerender then pass the dependecy array
+
+```js
+useEffect(() => {
+  console.log('hi');
+
+},[searchText])
+```
+It would be depends on searchText. Whenever searchText changes, it gets executed.
+
+```js
+useEffect(() => {
+  console.log('hi');
+
+},[])
+```
+If I keep the dependency array empty then it will execute just once `after initial render` because it is not dependent on anything
+
+- empty dependency array===> once after rerender
+- dependency array [searchText]===> once after initial render + everytime when searchText gets changed.
+
+### async
+- The keyword async before a function makes the function return a promise
+```js
+async function myFunction() {
+  return "Hello";
+}
+myFunction().then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+```
+### optional chaining
+- The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called is undefined or null, it returns undefined instead of throwing an error.
+```js
+const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName);
+// Expected output: undefined
+
+console.log(adventurer.someNonExistentMethod?.());
+// Expected output: undefined
+```
+### Shimmer Effect
+- Basic skeleton that we load before loading the actual data
+- generally used in the place of loading icon like spinning loader.
+- Shimmer effects are loading indicators used when fetching data from a data source that can either be local or remote. It paints a view that may be similar to the actual data to be rendered on the screen when the data is available.
+
+### UX/UI
+- Let's take an example. Earlier people use the loading icon like spinner or progress bar before the data load.
+- Suddenly ui changes with data.
+- This is bad user experience design
+- Human brain likes images (Human psycology)
+- We don't want lot of fluctuation in the UI
+- Psycologis figured out to load empty boxes. This is known as ux design principle.
+### Ternary operator
+- The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. This operator is frequently used as an alternative to an if...else statement.
+```js
+const age = 26;
+const beverage = age >= 21 ? "Beer" : "Juice";
+console.log(beverage); // "Beer"
+```
+### Conditional rendering
+- link:
+  - https://reactjs.org/docs/conditional-rendering.html
+  - https://www.digitalocean.com/community/tutorials/7-ways-to-implement-conditional-rendering-in-react-applications
+
+- Conditional rendering is a term to describe the ability to render different user interface (UI) markup if a condition is true or false. 
+- In React, it allows us to render different elements or components based on a condition.
+- you can conditionally render JSX using JavaScript syntax like if statements, &&, and ? : operators.
+- Few types of conditional rendering
+  1. if statements 
+```js
+{ if(errorMsg) { (
+
+{errorMsg}
+) } }
+
+```
+  2. && operator : if the condition is true, display the right-side code else display nothing.
+{ errorMsg &&
+
+{errorMsg}
+}
+  3. ? : operator - If allRestaurants is empty, then show Shimmer Component else render RestaurantCard Components
+```js
+const BodyComponent = () => { 
+    return (allRestaurants.length===0)?<Shimmer/> : (
+    <>
+    <h1>Restaurant rendered</h1>
+    </>
+   )
+}
+```
+### filter states 
+- We need two states for this because earlier I created only one state variable and the problem is when I was doing 1st search and le's say I have 20 restaurants then it was searching form 20 restaurnats and give let's say 5 restaurants but when I was doing second search, it was searching from 5 restaurants not 20. that's why we need a copy of restaurant
+- Two states : [allRestaurant,setAllRestaurnat], [filteredRestaurant, setAllRestaurant]
+- When I load the page then I need to show all restaurant but we have to display always filtered restaurants so we need to set fetched data to filtered restaurant and all restaurants.
+- Need to filter from allRestaurants so we have to pass allRestaurants on search function.
+
+### How do you avoid rendering component
+- through optional chaining
+```
+ return (allRestaurants?.length===0)?<Shimmer/> : (<h1>Hello<h1>)
+```
+- through if
+- early return : When we returning 
+```js
+if(!allRestaurants) return null; //not render component
+```
+### Reconcilliation
+- written in the React core
+- diff algo does the saame work in react native
+### ReactDom
+-  to update the dom
 ### References
-* [Reconcilliation](https://reactjs.org/docs/reconciliation.html)
-* [React Fiber](https://github.com/acdlite/react-fiber-architecture)
-* [Diffing algorithm](https://javascript.plainenglish.io/reacts-diffing-algorithm-1a64cfefa4e0)
-* [File Structure](https://reactjs.org/docs/faq-structure.html)
-* [useState](https://reactjs.org/docs/hooks-state.html)
+- [conditional rendering](https://reactjs.org/docs/conditional-rendering.html)
+- [7 ways to implement coditional rendering](https://www.digitalocean.com/community/tutorials/7-ways-to-implement-conditional-rendering-in-react-applications)
+- [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+- [aync await](https://javascript.info/async-await)
+- [Ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
