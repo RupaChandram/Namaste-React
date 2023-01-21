@@ -1,4 +1,4 @@
-### Coding Assignment: Chapter - 05 Let's get hooked (08/01/2023)
+### Coding Assignment: Chapter 06 -Exploring the world
 
 ### Food ordering app
 

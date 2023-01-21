@@ -1,4 +1,4 @@
-## Class Summary Chapter - 06 (Exploring The World)
+## Chapter - 06 (Exploring The World)
 
 Exploring the world means our ui project will explore the world (communicate with other services).
 
