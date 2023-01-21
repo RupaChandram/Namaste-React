@@ -3,7 +3,6 @@
 Exploring the world means our ui project will explore the world (communicate with other services).
 
 ### Topics that are covered in class 6
-### Topics that are covered: 
 * Recap of previous chapter
   * config-driven-ui
   * useState()
