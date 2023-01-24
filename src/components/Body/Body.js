@@ -1,14 +1,16 @@
-import RestaurantCard from "../restaurant-card-component/restaurant-card"
-import { GET_RESTAURANTS } from "../config/config"
+import RestaurantCard from "../RestaurantCard/RestaurantCard"
+import { GET_RESTAURANTS } from "../Config/config"
 import { useState,useEffect } from "react";/** Named Export*/
-import Shimmer from "../shimmer-component/shimmer";
+import Shimmer from "../Shimmer/Shimmer";
+import {Link} from "react-router-dom"
 
 const filterData = (searchText, restaurants) => {
   return restaurants.filter(restaurant => restaurant?.data?.name?.toLowerCase().includes(searchText.toLowerCase()));
 }
 
 
-const BodyComponent = () => { 
+const Body = () => { 
+  console.log(useState());
   const [searchInput, setSearchInput] = useState();
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -71,12 +73,13 @@ const BodyComponent = () => {
        <div className="restaurant-list">
         {
             filteredRestaurants.map((restaurant) => {
-                return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+                return  <Link className="link-styles" to={"/restaurant/" + restaurant?.data?.id} key={restaurant?.data?.id}><RestaurantCard {...restaurant.data} key={restaurant?.data?.id} /></Link>
             })
-        }
+          }
+          
             </div>
     </>
    )
 }
 
-export default BodyComponent;
+export default Body;

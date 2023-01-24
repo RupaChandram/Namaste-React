@@ -1,254 +1,314 @@
 ### Topics that are covered: 
-* Recap of previous chapter
-  * config-driven-ui
-  * useState()
-  * Virtual DOM
-  * Diffing Algorithm
-  * React Fiber
-  * Why react is fast?
-  * Hooks
-* Monolithic architecture
-* Microservices archtecture
-* How different projects get connected?
-* how do we call the api in JS
-* useEffect hook
-* async
-* optional chaining
-* Shimmer Effect
-* UX/UI
-* Conditional Rendering
-* filter states varibles
-* How do you avoid rendering component?
-  * early render
-* References
+- CORS Plugin
+- HOOKS
+- useEffect
+- Component inside component
+- useState inside if else
+- useState in for loop
+- useState
+- Can I use more that than one useEffect
+- How should we import images?
+- When to use extra packages
+- Formik
+- React Router
+- emmet to generate component
+- Name of other routers
+- Routing Configuration
+- Error Page
+- Disadvantage of anchor tag
+- SPA
+- Two types of routing /rendering
+- Link
+- Children in routing
+- Outlet
+- Dynamic Routing
+- Break your component into small logic
+- Destructuring
+- Object.values()
+- Important Points
+- References
 
-
-### Recap:
-- Created food ordering app kind of swiggy app
-- We can see the list of restaurant.
-- Implemented Config-driven UI: powerful way of building web app. Every big companies uses this.
-- useState for restaurant
-
-### config-driven-ui
-- config is nothing but a json object. Either we get that config from the backend or we pass the hardcoded config in a proper manner in frontend app.
-- any config can power the app. 
-- Generally we get config from api call
-- Eg: config.js
-
-### useState()
-- Hooks are normal JS function
-- FB developer gives extra functionality to this function
-- Whenever there is something changes on the UI, we need local state to handle that.
-- eg. If I have created one title and we want to change the title on the click button then it won't give proper output if we have create normal variable. React doesn't track normal variable. We need to create state variable for that.
-- This can update the title but then we need to keep our ui in the sync with the data. We need to keep the ui in sync with state.
-- For that sync, we need state.
-
-- use:
-    - import with named import
-
+ ### CORS Plugin
+ - Alllow CORS: Acces-Control-Allow-Origin
+  
+  ### HOOKS
+  - Hooks are functions that allows us to use state and life cycle methods inside functional components.
+  ### useEffect
+  - React gave us this hook
+  - useEffect is called after the component renders.
+  - Reason why we use:
+   - Basically if we want some piece of code to be executed after the rendering of the component then we can put that code inside the useEffect().
+  - It has 2 params
+   - Callback : gets called after component rendered
+   - dependency array
+- syntax:
 ```js
-import {useState} from 'react';
+useEffect(()=>{
+   getRestaurants(); ----> It will be called after rendering of component.
+},[]);
 ```
- -  Array destructuring: React retuns array for useState. Gives 2 things
-    1. state variable
-    2. function that would modified the state variable
- - you can pass intial value to put in this variable
-
+- second param of useEffect:
+   - 1. Empty array
 ```js
-const [title,setTitle]=useState("Food Villa");
-<button onClick={()=>setTitle("HungerBox")}>click</button>
+useEffect(()=>{
+   getRestaurants(); ----> It will be called after rendering of component.
+},[]);
 ```
- - flow:
-    - Intial value is Food Villa
-    - Once we click on the button setTitle() gets called.
-    - it changes the value with reconcilliation
-    - it rerenders the component. Check with console log inside the component.
-    - just update the title only 
-
-### Virtual DOM
-- Representation of actual DOM
-- Elements are represented by a tree.
-- kind of JS object.
-- Whenever there is change in the state, tree get modified and react will rerender 
-
-### Diff algo
-- Reconcilliation uses diff algo
-- current tree is compared with the updated tree
-- whatever the difference is there that is reflected on the DOM
-
-### React Fiber
-- updated reconcilliation algorithm
-
-### Why react is fast?
-- fast DOM manipulation because of diff algo/react fiber
-
-### Hooks
-- Normal javascript function.
-- written by facebook developer.
-What we are going to explore:
-
-### Monolithic architecture
-- In old days, there used to be single huge application. 
-- Eg: In 1 project- same project for ui, same for backend, api etc
-- deploy: omggggg. for single button changes, it needs to be deploy whole project. Such a big mess.
-- So this type of application is known as monolithic
-
-### Microservices archtecture
-- Instead of having 1 project, now we can have small small projects.
-- eg: separate project for authentication, separate for sms, separate for backend, logs, apis even databaseds can have replica.
-- advantage: easier to maintain, easy to deploy, easy to check, separation of concern, single responsibilities, can be used different language like ui-react,log-golang, authentication- python etc.
-
-#### HungerBox is ui- microservice
-
-### How different projects get connected?
-- mapped with different port numbers with same domain name sometimes with different domain names as well
-### how do we call the api in JS
-- fetch :  function of Window object, pre built, browser api, pass api and call the api.
-- promises
-- ajax
-### Make the api call
-- let's take an example : I have a body componenet where I have listed the restaurants and there is a filter function on button click
-inside the body component then we should not call the api inside the component because on every click it will rerendere the component and if you have called your api inside that component then on every click, api will be called. Basically, components get rerender on every small change.
-- when to call: As when my page loads, call an api and fill the data.
-- don't call inside component because for every change it get's executed.
-
-loads--> api--> render the page(bad approach)
-loads ---> render ----> api---> update ui (good approach)
-- use useEffect hook 
-
-### useEffect hook
-- hook (function)
-- use as function by passing 2 parameters 
-    1. another function(callbacks): this callback function would be not called immediately but whenever my useEffect would be called.
-    2. dependency array: when you don't to rerender on every changes then pass dependency.
-     
-- import it via named import from react library
-- there are 2 times when component rerenders either state changes or props changes.
-- whenever it rerenders ,useEffect() gets called
-- When you don't want to get called in every rerender then pass the dependecy array
-
+      - How many time will it be called : only once after initial render of component
+   - 2. state variable in dependency array
 ```js
-useEffect(() => {
-  console.log('hi');
-
-},[searchText])
+useEffect(()=>{
+   getRestaurants(); 
+},[searchText]);---> state variable in dependency array
 ```
-It would be depends on searchText. Whenever searchText changes, it gets executed.
-
+      - Whenenver seaarchText changes, it would be called after rendering of the my component
+      - sequence:
+         Component will render---> useEffect() will be called ---> if any changes in state variable, will render again
+      - our app sequence
+         initial render of component---> useEffect() is called--> setRestaurant() will be executed --> component rerenders --> fill the data in the component
+   - 3. What if we don't have array
 ```js
-useEffect(() => {
-  console.log('hi');
-
-},[])
+useEffect(()=>{
+   getRestaurants(); 
+});---> No dep array (It will be called after each render of the component)
 ```
-If I keep the dependency array empty then it will execute just once `after initial render` because it is not dependent on anything
+      - This a valid code.
+      - It means we don't have dependency array
+      - It is not dependent on anything.
+      - useEffect() behavior is to get called after the component render. Every time my component will render then my useEffect will render. 
 
-- empty dependency array===> once after rerender
-- dependency array [searchText]===> once after initial render + everytime when searchText gets changed.
+### Component inside component
+- Never create component isnside component. 
+- You can compose but never create
+- Reason : Because at every render, it will create component unnecessarily.
 
-### async
-- The keyword async before a function makes the function return a promise
+### useState inside if else
 ```js
-async function myFunction() {
-  return "Hello";
+if(){
+   const [search, setSearch]=useState("");
 }
-myFunction().then(
-  function(value) {myDisplayer(value);},
-  function(error) {myDisplayer(error);}
-);
 ```
-### optional chaining
-- The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called is undefined or null, it returns undefined instead of throwing an error.
+- Don't put useState inside if block.
+- Reason : 
+   - useState has it's own variable (local).
+   - React doesn't like inconsistency
+   - In this case react won't know whether `search` will ever be there or not.
+   - Not an optimized code.
+### useState in for loop 
 ```js
-const adventurer = {
-  name: 'Alice',
-  cat: {
-    name: 'Dinah'
-  }
+for(){
+   const [search, setSearch]=useState("");
+}
+```
+- Never write useState in for loop
+- Reason:
+   - React doesn't like inconsistency
+   - It should exactly konw how many search text will be there
+   - Not a good way. You should not create lots of ssearchText
+   - Suppose you initialize with 0 and looping till 10 then it will 10 searchText but it doesn't make any sense to create 10 searchText. Never do that
+
+### useState
+- It's a hook which react gives you to create local state variable inside your functional component.
+- Never write useState outside your functional component
+
+### Can I use more that than one useEffect
+- yes, completely fine.
+```js
+const Body =()=>{
+
+   useEffect(()=>{
+   getRestaurants(); 
+},[]);
+
+useEffect(()=>{
+   getRestaurants(); 
+},[searchText]);
+}
+```
+### How should we import images?
+- Best way to keep the images inside assets.
+- assets shoud be inside src.
+```
+src 
+ |
+ ----> assets
+         |
+         ----> images
+                  |
+                  ----->cart.png
+                  ----->logo.png
+
+```
+steps:
+1. `import Logo from "../assets/images/logo.png"`
+2. use in img tag
+```js
+const Title=()=>{
+<img src={Logo} alt="logo"/>
+}
+```
+- You can load images via CDN 
+   - Great place to host images through CDN.
+   - Reason:
+      - CDN is faster
+      - Caches images
+      - Returns it very fast
+      - 100% up time
+      - optimizes things
+### When to use extra packages
+- Using npm package (npm i react-shimmer) 
+ - For everything, we should not import packages.
+- If you try to use extra packages, there is n number of packages would be included.
+- Eg: [is-odd]: package to find out the number whether it's odd ot not. For this simple function, we should not include packages
+- When there is simple thing, we can code. Don't packages.
+- Shimmer in our case is dummy restaurant card.
+- When the things get complex, we should import packages.
+
+### Formik
+- Great library for creation of form.
+- Quotation: Build form in React without tear.
+
+### React Router
+- Latest version is 6.0
+- command: `npm i react-router-dom` or `npm install react-router-dom`
+- 207 packages
+
+### emmet to generate component
+- rafce + enter
+ 
+ ### Name of other routers
+ - Create Hash Router
+ - Create Memory Router
+ - Router Provider
+
+### Routing Configuration
+- create a configuration
+- There are other routers but recommended way is Create Browser router
+- steps:
+1. import creatBrowserRouter from react-router-dom
+2. Outside the component, call createBrowserRouter and assign it to a variable. 
+3. It takes some configuration as an array of objects. Always create route below the component.
+4. Import RouterProvider from react-router-dom
+5. Use router object as a param of RouterProvider
+- React Router Dom gives a great error router page.
+- go to [app.js](https://github.com/RupaChandram/Namaste-React/blob/class-7-finding-the-paths/src/app.js) for reference.
+
+### Error Page
+- If there is a mistake in the route, it can catch error and display the error
+```js
+
+{
+   path:"/".
+   element:</Home>,
+   errorElement:<Error/>
+}
+```
+- Whatever you want to load, give it to element on certain path
+- in case of error or wrong path, give it errorElement.
+- Some more information of error page
+   - import {useRouteError} from 'react-router-dom';---> Hook (function)
+```js
+const Error = () => {
+    const err = useRouteError();
+    console.log(err);
+};
+```
+- useRouteError will give you the information what types of error you have.
+- It won't show error in the console.
+
+### Disadvantage of anchor tag
+- When you click on anchor tag, it refresh the page
+- Bad experience
+
+### SPA
+- Single Page Application
+- In older days, for navigation purpose, pages reload or network reloads etc.
+- SPA gives the facility to navigate to other pages easily without refresh the page.
+### Two types of routing /rendering
+1. Client-side : navigation happens without any network call.
+2. Server-side : In server-side rendering, all pages comes from server via navigation.
+
+### Link
+- Don't use anchor tag for navigation purpose because it reloads the page when you click over tag.
+- React Router Dom gives `Link`
+```
+import {Link} from 'react-router-dom';
+
+```
+- instead of `href`, use `to`.
+```html
+<Link to="" >About</Link>
+```
+- Remix developers developed Link tag.
+- Link is using <a></a> behind the scene but with proper react function. React router dom keeps track of all these links
+### Children in routing
+```js
+ {
+        path: "/",
+        element: <Layout />,
+        errorElement: <Error />,
+        children: [
+            {
+                path: "/",
+                element:<Body/>
+            },
+        ]
+ }
+```
+### outlet
+- all the childern will go into the outlet according to the route.
+- outlet is like a placeholder.
+- Configuration based rendering
+```html
+<Header/>
+<outlet/>
+<Footer/>
+```
+### Dynamic Routing
+```js
+{
+path     : "/restaurant/:resId",
+element  : <RestaurantMenu />
+}
+
+```
+- useParams:
+   - prefix use means Hooks.
+   - to read the param
+      - import {useParam} from 'react-router-dom';
+      - inside component
+      `const {resId}=useParam();`
+### Break your component into small logic
+- more component is better according to logic
+- Benefits:
+   - Modular
+   - Cleaner code
+   - Testable
+   - Maintainable
+   - Reusable
+### Destructuring
+- https://www.geeksforgeeks.org/destructuring-of-props-in-reactjs/
+### Object.values
+- Gives the alue in array
+- conversion of object to array
+- The Object.values() static method returns an array of a given object's own enumerable string-keyed property values.
+```js
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
 };
 
-const dogName = adventurer.dog?.name;
-console.log(dogName);
-// Expected output: undefined
-
-console.log(adventurer.someNonExistentMethod?.());
-// Expected output: undefined
+console.log(Object.values(object1));
+// Expected output: Array ["somestring", 42, false]
 ```
-### Shimmer Effect
-- Basic skeleton that we load before loading the actual data
-- generally used in the place of loading icon like spinning loader.
-- Shimmer effects are loading indicators used when fetching data from a data source that can either be local or remote. It paints a view that may be similar to the actual data to be rendered on the screen when the data is available.
+### Important points
+- Never create component inside component: rendering problem, for simple changes it will render the components again and again.  
+- Never write useEffect inside if condition
+- Never write useEffect inside a for loop (consistency issue would happen)  
+- React gives useState to give state to local variable so never use it outside the functional component.
 
-### UX/UI
-- Let's take an example. Earlier people use the loading icon like spinner or progress bar before the data load.
-- Suddenly ui changes with data.
-- This is bad user experience design
-- Human brain likes images (Human psycology)
-- We don't want lot of fluctuation in the UI
-- Psycologis figured out to load empty boxes. This is known as ux design principle.
-### Ternary operator
-- The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. This operator is frequently used as an alternative to an if...else statement.
-```js
-const age = 26;
-const beverage = age >= 21 ? "Beer" : "Juice";
-console.log(beverage); // "Beer"
-```
-### Conditional rendering
-- link:
-  - https://reactjs.org/docs/conditional-rendering.html
-  - https://www.digitalocean.com/community/tutorials/7-ways-to-implement-conditional-rendering-in-react-applications
-
-- Conditional rendering is a term to describe the ability to render different user interface (UI) markup if a condition is true or false. 
-- In React, it allows us to render different elements or components based on a condition.
-- you can conditionally render JSX using JavaScript syntax like if statements, &&, and ? : operators.
-- Few types of conditional rendering
-  1. if statements 
-```js
-{ if(errorMsg) { (
-
-{errorMsg}
-) } }
-
-```
-  2. && operator : if the condition is true, display the right-side code else display nothing.
-{ errorMsg &&
-
-{errorMsg}
-}
-  3. ? : operator - If allRestaurants is empty, then show Shimmer Component else render RestaurantCard Components
-```js
-const BodyComponent = () => { 
-    return (allRestaurants.length===0)?<Shimmer/> : (
-    <>
-    <h1>Restaurant rendered</h1>
-    </>
-   )
-}
-```
-### filter states 
-- We need two states for this because earlier I created only one state variable and the problem is when I was doing 1st search and le's say I have 20 restaurants then it was searching form 20 restaurnats and give let's say 5 restaurants but when I was doing second search, it was searching from 5 restaurants not 20. that's why we need a copy of restaurant
-- Two states : [allRestaurant,setAllRestaurnat], [filteredRestaurant, setAllRestaurant]
-- When I load the page then I need to show all restaurant but we have to display always filtered restaurants so we need to set fetched data to filtered restaurant and all restaurants.
-- Need to filter from allRestaurants so we have to pass allRestaurants on search function.
-
-### How do you avoid rendering component
-- through optional chaining
-```
- return (allRestaurants?.length===0)?<Shimmer/> : (<h1>Hello<h1>)
-```
-- through if
-- early return : When we returning 
-```js
-if(!allRestaurants) return null; //not render component
-```
-### Reconcilliation
-- written in the React core
-- diff algo does the saame work in react native
-### ReactDom
--  to update the dom
 ### References
-- [conditional rendering](https://reactjs.org/docs/conditional-rendering.html)
-- [7 ways to implement coditional rendering](https://www.digitalocean.com/community/tutorials/7-ways-to-implement-conditional-rendering-in-react-applications)
-- [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-- [aync await](https://javascript.info/async-await)
-- [Ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+- [Naming Convention](https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76)
+- [createBrowserRouter](https://reactrouter.com/en/main/routers/create-browser-router)
+- [Objec.values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values)

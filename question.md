@@ -1,23 +1,25 @@
-### Chapter 06 -Exploring the world
-* What is Microservices?
-* What is Monolithic architecture?
-* What is the difference between monolithic and microservices?
-* Why do we need a useEffect hook?
-* What is optional chaining?
-* What is Shimmer UI?
-* What is the difference between JS expression and JS statement
-* What is conditional rendering, explain with a code example?
-* What is CORS?
-* What is async and await?
-* What is the use of `const json=await data.json();` in getRestaurants()
+### Chapter 07 - Finding The Path
+
+### Theory Assignment
+
+* What are various ways to add images into our app? Explain with cose examples.
+* What would happen if we do console.log(useState()?
+* How will useEffect behave if we don't add a dependency array?
+* What is SPA?
+* What is difference between Client Side Routing and Server Side Routing?
 
 ### Coding Assignment
-* Play with the useEffect Hook to see when it is called?(before or after render)
-* Play with dependency array in useEffect Hook
-* Play with the developer console by putting a debugger in render and useEffect
-* Call an actual API to get data
-* Handle Error in your API call
-* Build Shimmer UI when data is not loaded.
-* Render your UI with actual API data.
-* Make search functionality work
-* Make a Login Logout button which toggles with a state.
+
+* Add Shimmer Effect without installing a library
+* Install react-router-dom
+* Create a appRouter and Provide it to the app 
+* Create a Home, About, Contact Page with Link (use child routes) .
+* Make a Error page for routing errors
+* Create a Restaurant Page with dynamic restaurant ID
+* (Extra) - Create a login Page using Formik Library
+
+### Resources
+
+* [React Router DOM](https://reactrouter.com/en/main)
+* [Client Side Routing](https://reactrouter.com/en/main/start/overview)
+* [Formik](https://formik.org/)

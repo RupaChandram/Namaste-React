@@ -1,4 +1,4 @@
-export const FooterComponent = () => {
+export const Footer = () => {
   return (
     <div className="footer">
       <h4>Developed By Rupa</h4>

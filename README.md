@@ -1,43 +1,51 @@
-## Chapter - 06 (Exploring The World)
+## Chapter - 07 (Finding the path)
 
-Exploring the world means our ui project will explore the world (communicate with other services).
-
-### Topics that are covered in class 6
-* Recap of previous chapter
-  * config-driven-ui
-  * useState()
-  * Virtual DOM
-  * Diffing Algorithm
-  * React Fiber
-  * Why react is fast?
-  * Hooks
-* Monolithic architecture
-* Microservices archtecture
-* How different projects get connected?
-* how do we call the api in JS
-* useEffect hook
-* async
-* optional chaining
-* Shimmer Effect
-* UX/UI
-* Conditional Rendering
-* filter states varibles
-* How do you avoid rendering component?
-    * Early return
+Finding the path means routing/navigation.In this chapter, we'll find the path of the pages. 
+### Topics that are covered in class 7
+- CORS Plugin
+- HOOKS
+- useEffect
+- Component inside component
+- useState inside if else
+- useState in for loop
+- useState
+- Can I use more that than one useEffect
+- How should we import images?
+- When to use extra packages
+- Formik
+- React Router
+- emmet to generate component
+- Name of other routers
+- Routing Configuration
+- Error Page
+- Disadvantage of anchor tag
+- SPA
+- Two types of routing /rendering
+- Link
+- Children in routing
+- Outlet
+- Dynamic Routing
+- Break your component into small logic
+- Destructuring
+- Object.values()
+- Important Points
+- References
 ### Coding
-- API integration through useEffect
-- Proper filter function
-- Implementation of Shimmer UI
-- Toggling of Login/Logout
+- Folder structure
+- Routing implementation
+- Implementation of Card Menu
+- Shimmer UI for Card menu
+- Error Page
+- Login Form with help of Formik
 
-### HungerBox is ui- microservice   
 ### Have a look in .md files
 - Question : question.md
 - Notes : notes.md
 - Theory assignment: theory-assignment.md
 - Coding : code.md
+- Best Practices : best-practices.md
 
-### Live link: [Exploring the world](https://chapter-06-exploring-the-world.netlify.app/)
+### Live link: [Finding the path](https://chapter-07-finding-the-path.netlify.app/)
 ### Happy coding !!!
 
 
