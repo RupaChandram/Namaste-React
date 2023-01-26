@@ -1,48 +1,163 @@
+### Theory Assignment : 08 (Let's Get Classy)
 
-### Assignment : 07 (Finding the path)
-### What are various ways to add images into our app? Explain with cose examples.
-- We can render the images in two ways:
-
-1. Via link (Paste cdn link over there)
-```html
-<img src="paste link over here" alt="Render image through cdn"/>
-```
-2. Via local file
+### How do you create Nested Routes react-router-dom cofiguration
+- If you want to render children inside children 
+- steps with example: 
+1. create profile component
 ```js
-import Logo from "./logo.png";
+const Profile = () => {
+    return (
+        <div>
+            <h2>Profile rendered...</h2>
+       </div>
+   ) 
+}
+export default Profile;
+```
+2. create children of children route
+```js
+const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <Layout />,
+        errorElement: <Error />,
+        children: [
+            {
+                path: "/about",
+                element: <About />,
+                children: [{
+                    path: "profile",
+                    element:<Profile/>
+                }]
+            },
+            
+        ],
+    }
+]);
+```
+3. Pass outlet component for child component
+```js 
+import { Outlet } from "react-router-dom";
 
-export default function Header() {
-  
-  return <img src={Logo} alt="react logo" />
+const About = () => {
+    return (
+        <div className="container">
+            <h1>About page is coming soon...</h1>
+            <Outlet />
+        </div>
+    )
+}
+export default About;
+```
+- Note :
+   - Never use `/profile` for children of children (nested route). slash means concate with root not the relative path. Instead of `/profile`, use `profile`.
+   - Outlet is replaced by child component. So, you can directly use child component instead of <Outlet /> there
+
+### Read abt createHashRouter, createMemoryRouter from React Router docs.
+- createHashRouter and createMemoryRouter are another ways of doing routing in react.
+- [createHashRouter](https://reactrouter.com/en/main/routers/create-hash-router)
+- [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router)
+
+### What is the order of life cycle method calls in Class Based Components.
+
+### Why do we use componentDidMount?
+- Component life cycle method.
+- The componentDidMount() method allows us to execute the React code when the component is already placed in the DOM (Document Object Model). 
+- This method is called during the Mounting phase of the React Life-cycle i.e after the component is rendered.
+- All the AJAX requests and the DOM or state updation should be coded in the componentDidMount() method block. 
+- We can also set up all the major subscriptions here but to avoid any performance issues, always remember to unsubscribe them in the componentWillUnmount() method.
+### Why do we use componentWillUnmount? Show with example.
+- The componentWillUnmount() method allows us to execute the React code when the component gets destroyed or unmounted from the DOM (Document Object Model). 
+- This method is called during the Unmounting phase of the React Life-cycle i.e before the component gets unmounted.
+- All the cleanups such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount() should be coded in the componentWillUnmount() method block.
+- Tip: Never call setState() in componentWillUnmount() method.
+- Eg: 
+```js
+componentDidMount(){
+  setInterval(()=>{
+    console.log("hello")
+  },1000);
 }
 ```
-- asset folder is the correct place to keep the local images
+- It will call `componentDidMount()` every second.
+- cons:
+  - If you will leave the page, it will still gets called.
+  - This is the problem of SPA.
+  - Because it's not reloading of refreshing.
+  - Performance loss.
+  - Needs to be cleaned with the help of `componentWillUnmount()`
+- How to clean :
+1. Assign the funtion to the variable.
 ```js
-import logo from "../../assets/images/hunger-box.png";
-
-export const Title = () => (
-   
-        <img className="logo" src={logo} alt="Logo" />
-)
-
+componentDidMount(){
+  this.timer=setInterval(()=>{
+    console.log("hello")
+  },1000);
+}
 ```
-### What would happen if we do console.log(useState())?
-- If we do `console.log(useState())` then we get an array.
-- [undefined,f]
-- first element represents state variable and second element is bound dispatchSetState function.
+2. use `componentWillUnmount()`.
+```js
+componentWillUnmount(){
+  clearInterval(this.timer);
+}
+```
 
-### How will useEffect behave if we don't add a dependency array?
-- If we don't add a dependency array then it will not throw any error. It's a valid code.
-- Not adding dependency array means useEffect is not dependent on anything.
-- It will get executed after every render of component.
+### (Research) Why do we use super(props) in constructor?
+- Super() function is to call the constructor of the parent class. 
+- It is used when we need to access a few variables in the parent class.
+- If super() is not used, then it will throw error in the console. 
+`Reference Error : Must call super constructor in derived classes before accessing 'this' or returning from derived constructor` 
+- When you try to use props passed on parent to child component in child component using this.props.name, it will still work without super(props). Only super() is also enought for accessing props in render method.
+- The main difference between super() and super(props) is the this.props is undefined in child's constructor in super() but this.props contains the passed props if super(props) is used.
+### (Research) Why can't we have the callback function of useEffect async?
+```js
+// ❌ Don't do this!
+useEffect(async () => {
+  const users = await fetchUsers();
+  setUsers(users);
 
-### What is SPA?
-- SPA means single page application
-- Page won't reload if we navigate to other pages.
-- Dynamically updates the webpage with data from web server without reloading/refreshing the entire page. 
-- All the HTML, CSS, JS are retrieved in the initial load and other data/resources can be loaded dynamically whenever required. 
+  return () => {
+    // this never gets called, hello memory leaks...
+  };
+}, []);
+```
+- Because React’s useEffect hook expects a cleanup function returned from it which is called when the component unmounts. 
+- Using an async function here will cause a bug as the cleanup function will never get called.
+- So what do we do?
+```js
+// Ship it
+useEffect(() => {
+  (async () => {
+    const users = await fetchUsers();
+    setUsers(users);
+  })();
 
-### What is difference between Client Side Routing and Server Side Routing?
-- In Server-side routing, every change in URL, http request is made to server to fetch the webpage, and replace the current webpage with the older one.
+  return () => {
+    // this now gets called when the component unmounts
+  };
+}, []);
+```
+or 
+```js
+// Ship it
+useEffect(() => {
+  const getUsers = async () => {
+    const users = await fetchUsers();
+    setUsers(users);
+  };
 
-- In Client-side routing, during the first load, the webapp is loaded from server to client, after which whenever there is a change in URL, the router library navigates the user to the new page without sending any request to backend. All Single Page Applications uses client-side routing.
+  getUsers(); // run it, run it
+
+  return () => {
+    // this now gets called when the component unmounts
+  };
+}, []);
+```
+
+### References:
+
+- [React Life Cycle Method Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [createHashRouter](https://reactrouter.com/en/main/routers/create-hash-router)
+- [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router
+- [Code Link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
+- [asyn useEffect](https://ultimatecourses.com/blog/using-async-await-inside-react-use-effect-hook#:~:text=Why%3F,function%20will%20never%20get%20called.)

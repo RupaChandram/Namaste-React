@@ -1,21 +1,13 @@
-### Coding Assignment: Chapter 07 - Finding the path
+### Coding Assignment: Chapter 08 - Let's get classy
 
-### Food ordering app
-
-- Placed asset folder in the correct place
-- Changed the naming convention of components
-- Made resposive ui (Home page)
-- Routing Configuration 
-- Created RestaurantMenu : When you click on card, you will go to the specific restaurant.
-- Created Login page with the help of Formik
-    -  Email input should:
-        - Be required.
-        - Look like a real email.
-
-    - Password input should:
-        - Be required.
-        - Be at least eight characters long.
-        - Contain at least one number.
-- Routing configuration of Login Page
-- Custom Error Page
-- Shimmer for Restaurant-menu
+* Create a Class Based Component
+  - Create 2 class based child components
+  - Pass props from Parent to child
+  - Create a constructor
+  - Create a state variable inside child
+  - Use this setState to update it
+  - What if there are multiple state variables?
+  - Write a console.log for each lifecycle method
+  - Play with the console logs to find out the correct order of their execution 
+* Create interval inside componentDidMount?
+  - Use clearinterval to fix the issue caused by that interval

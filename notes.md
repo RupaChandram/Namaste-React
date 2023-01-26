@@ -1,314 +1,306 @@
-### Topics that are covered: 
-- CORS Plugin
-- HOOKS
-- useEffect
-- Component inside component
-- useState inside if else
-- useState in for loop
-- useState
-- Can I use more that than one useEffect
-- How should we import images?
-- When to use extra packages
-- Formik
-- React Router
-- emmet to generate component
-- Name of other routers
-- Routing Configuration
-- Error Page
-- Disadvantage of anchor tag
-- SPA
-- Two types of routing /rendering
-- Link
-- Children in routing
-- Outlet
-- Dynamic Routing
-- Break your component into small logic
-- Destructuring
-- Object.values()
-- Important Points
-- References
+### Topics that are covered:
+- Quick Test 
+- Children of Children in routing
+- Class Based Component
+- extends
+- props in CBC and FBC
+### Quick Test
+1. Which tag do we use for routing?
+- Link tag
 
- ### CORS Plugin
- - Alllow CORS: Acces-Control-Allow-Origin
-  
-  ### HOOKS
-  - Hooks are functions that allows us to use state and life cycle methods inside functional components.
-  ### useEffect
-  - React gave us this hook
-  - useEffect is called after the component renders.
-  - Reason why we use:
-   - Basically if we want some piece of code to be executed after the rendering of the component then we can put that code inside the useEffect().
-  - It has 2 params
-   - Callback : gets called after component rendered
-   - dependency array
-- syntax:
-```js
-useEffect(()=>{
-   getRestaurants(); ----> It will be called after rendering of component.
-},[]);
-```
-- second param of useEffect:
-   - 1. Empty array
-```js
-useEffect(()=>{
-   getRestaurants(); ----> It will be called after rendering of component.
-},[]);
-```
-      - How many time will it be called : only once after initial render of component
-   - 2. state variable in dependency array
-```js
-useEffect(()=>{
-   getRestaurants(); 
-},[searchText]);---> state variable in dependency array
-```
-      - Whenenver seaarchText changes, it would be called after rendering of the my component
-      - sequence:
-         Component will render---> useEffect() will be called ---> if any changes in state variable, will render again
-      - our app sequence
-         initial render of component---> useEffect() is called--> setRestaurant() will be executed --> component rerenders --> fill the data in the component
-   - 3. What if we don't have array
-```js
-useEffect(()=>{
-   getRestaurants(); 
-});---> No dep array (It will be called after each render of the component)
-```
-      - This a valid code.
-      - It means we don't have dependency array
-      - It is not dependent on anything.
-      - useEffect() behavior is to get called after the component render. Every time my component will render then my useEffect will render. 
+2. From where do we import the Link tag?
+- react-router-dom
 
-### Component inside component
-- Never create component isnside component. 
-- You can compose but never create
-- Reason : Because at every render, it will create component unnecessarily.
+3. What is Link using behind the scene
+- just an anchor tag
 
-### useState inside if else
+4. What hook do we use to read the url?
+- useParams()
+
+5. What function did we use to confugure our routing?
+- createBrowserRouter()
+
+6. What component that we use to provide the router to app?
+- Router Provider
+
+7. Suppose we have children in the routing, where do these children get injected?
+- Outlet component
+
+8. What element do we use to show the error in the routing?
+- errorElement
+
+### Children of Children
+If you want to render children inside children 
+steps with example
+1. create profile component
 ```js
-if(){
-   const [search, setSearch]=useState("");
+const Profile = () => {
+    return (
+        <div>
+            <h2>Profile rendered...</h2>
+       </div>
+   ) 
 }
+export default Profile;
 ```
-- Don't put useState inside if block.
-- Reason : 
-   - useState has it's own variable (local).
-   - React doesn't like inconsistency
-   - In this case react won't know whether `search` will ever be there or not.
-   - Not an optimized code.
-### useState in for loop 
+2. create children of children route
 ```js
-for(){
-   const [search, setSearch]=useState("");
-}
-```
-- Never write useState in for loop
-- Reason:
-   - React doesn't like inconsistency
-   - It should exactly konw how many search text will be there
-   - Not a good way. You should not create lots of ssearchText
-   - Suppose you initialize with 0 and looping till 10 then it will 10 searchText but it doesn't make any sense to create 10 searchText. Never do that
-
-### useState
-- It's a hook which react gives you to create local state variable inside your functional component.
-- Never write useState outside your functional component
-
-### Can I use more that than one useEffect
-- yes, completely fine.
-```js
-const Body =()=>{
-
-   useEffect(()=>{
-   getRestaurants(); 
-},[]);
-
-useEffect(()=>{
-   getRestaurants(); 
-},[searchText]);
-}
-```
-### How should we import images?
-- Best way to keep the images inside assets.
-- assets shoud be inside src.
-```
-src 
- |
- ----> assets
-         |
-         ----> images
-                  |
-                  ----->cart.png
-                  ----->logo.png
-
-```
-steps:
-1. `import Logo from "../assets/images/logo.png"`
-2. use in img tag
-```js
-const Title=()=>{
-<img src={Logo} alt="logo"/>
-}
-```
-- You can load images via CDN 
-   - Great place to host images through CDN.
-   - Reason:
-      - CDN is faster
-      - Caches images
-      - Returns it very fast
-      - 100% up time
-      - optimizes things
-### When to use extra packages
-- Using npm package (npm i react-shimmer) 
- - For everything, we should not import packages.
-- If you try to use extra packages, there is n number of packages would be included.
-- Eg: [is-odd]: package to find out the number whether it's odd ot not. For this simple function, we should not include packages
-- When there is simple thing, we can code. Don't packages.
-- Shimmer in our case is dummy restaurant card.
-- When the things get complex, we should import packages.
-
-### Formik
-- Great library for creation of form.
-- Quotation: Build form in React without tear.
-
-### React Router
-- Latest version is 6.0
-- command: `npm i react-router-dom` or `npm install react-router-dom`
-- 207 packages
-
-### emmet to generate component
-- rafce + enter
- 
- ### Name of other routers
- - Create Hash Router
- - Create Memory Router
- - Router Provider
-
-### Routing Configuration
-- create a configuration
-- There are other routers but recommended way is Create Browser router
-- steps:
-1. import creatBrowserRouter from react-router-dom
-2. Outside the component, call createBrowserRouter and assign it to a variable. 
-3. It takes some configuration as an array of objects. Always create route below the component.
-4. Import RouterProvider from react-router-dom
-5. Use router object as a param of RouterProvider
-- React Router Dom gives a great error router page.
-- go to [app.js](https://github.com/RupaChandram/Namaste-React/blob/class-7-finding-the-paths/src/app.js) for reference.
-
-### Error Page
-- If there is a mistake in the route, it can catch error and display the error
-```js
-
-{
-   path:"/".
-   element:</Home>,
-   errorElement:<Error/>
-}
-```
-- Whatever you want to load, give it to element on certain path
-- in case of error or wrong path, give it errorElement.
-- Some more information of error page
-   - import {useRouteError} from 'react-router-dom';---> Hook (function)
-```js
-const Error = () => {
-    const err = useRouteError();
-    console.log(err);
-};
-```
-- useRouteError will give you the information what types of error you have.
-- It won't show error in the console.
-
-### Disadvantage of anchor tag
-- When you click on anchor tag, it refresh the page
-- Bad experience
-
-### SPA
-- Single Page Application
-- In older days, for navigation purpose, pages reload or network reloads etc.
-- SPA gives the facility to navigate to other pages easily without refresh the page.
-### Two types of routing /rendering
-1. Client-side : navigation happens without any network call.
-2. Server-side : In server-side rendering, all pages comes from server via navigation.
-
-### Link
-- Don't use anchor tag for navigation purpose because it reloads the page when you click over tag.
-- React Router Dom gives `Link`
-```
-import {Link} from 'react-router-dom';
-
-```
-- instead of `href`, use `to`.
-```html
-<Link to="" >About</Link>
-```
-- Remix developers developed Link tag.
-- Link is using <a></a> behind the scene but with proper react function. React router dom keeps track of all these links
-### Children in routing
-```js
- {
+const appRouter = createBrowserRouter([
+    {
         path: "/",
         element: <Layout />,
         errorElement: <Error />,
         children: [
             {
-                path: "/",
-                element:<Body/>
+                path: "/about",
+                element: <About />,
+                children: [{
+                    path: "profile",
+                    element:<Profile/>
+                }]
             },
-        ]
- }
+            
+        ],
+    }
+]);
 ```
-### outlet
-- all the childern will go into the outlet according to the route.
-- outlet is like a placeholder.
-- Configuration based rendering
-```html
-<Header/>
-<outlet/>
-<Footer/>
-```
-### Dynamic Routing
-```js
-{
-path     : "/restaurant/:resId",
-element  : <RestaurantMenu />
+3. Pass outlet component for child component
+```js 
+import { Outlet } from "react-router-dom";
+
+const About = () => {
+    return (
+        <div className="container">
+            <h1>About page is coming soon...</h1>
+            <Outlet />
+        </div>
+    )
 }
-
+export default About;
 ```
-- useParams:
-   - prefix use means Hooks.
-   - to read the param
-      - import {useParam} from 'react-router-dom';
-      - inside component
-      `const {resId}=useParam();`
-### Break your component into small logic
-- more component is better according to logic
-- Benefits:
-   - Modular
-   - Cleaner code
-   - Testable
-   - Maintainable
-   - Reusable
-### Destructuring
-- https://www.geeksforgeeks.org/destructuring-of-props-in-reactjs/
-### Object.values
-- Gives the alue in array
-- conversion of object to array
-- The Object.values() static method returns an array of a given object's own enumerable string-keyed property values.
+- Note :
+   - Never use `/profile` for children of children (nested route). slash means concate with root not the relative path. Instead of `/profile`, use `profile`.
+   - Outlet is replaced by child component. So, you can directly use child component instead of <Outlet /> there
+
+### Class based component (CBC)
+- React initially started with class based component.
+- These hooks have recently started coming in. Earlier, there was no concept of functional based component.
+- It used to be very pity to write the code in CBC. It used to be very lengthy , messy, confusing for fellow developers, less maintainable.
+- class based component is no longer in use.
+- Note: If you are creating new project, please don't write CBC. Always prefer FBC.
+- Purpose of learning CBC:
+   - Many companies can have older projects.
+   - You should know the CBC
+   - Highly asked in the interviews
+   - Know CBC but do not use.
 ```js
-const object1 = {
-  a: 'somestring',
-  b: 42,
-  c: false
-};
-
-console.log(Object.values(object1));
-// Expected output: Array ["somestring", 42, false]
+import React from "react";
+class Profile extends React.Component{
+    render() {
+        return(<h1>Profile class renders..</h1>)
+    }
+}
+export default Profile;
 ```
-### Important points
-- Never create component inside component: rendering problem, for simple changes it will render the components again and again.  
-- Never write useEffect inside if condition
-- Never write useEffect inside a for loop (consistency issue would happen)  
-- React gives useState to give state to local variable so never use it outside the functional component.
+- Steps:
+   - import React from react.
+   - Create class that extends from React.Component.
+   - use render() that returns piece of JSX.
+   - export that class.
+- You can import like below also:
+`import {Component} from "react";`
 
-### References
-- [Naming Convention](https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76)
-- [createBrowserRouter](https://reactrouter.com/en/main/routers/create-browser-router)
-- [Objec.values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values)
+### extends
+- It comes under the inheritance.
+- When we want property and function from parent then we should use extend with the parent class name.
+
+Eg: `class Profile extends React.Component{}`
+
+### props in CBC and FBC
+
+- FBC:
+`<Profile name="Rupa"/>`
+
+ ```js
+ const Profile = (props) => {
+    return (
+        <div>
+            <h2>Profile rendered...</h2>
+            {props.name}
+       </div>
+   ) 
+}
+export default Profile;
+```
+- CBC:
+`<Profile name="Rupa"/>`
+```js
+class Profile extends React.Component{
+    render() {
+        return (<div>
+            <h1>Profile class renders..</h1>
+            {this.props.name}
+        </div>)
+    }
+}
+export default Profile;
+```
+   - When React tracks our component, it just takes the props and it will attaches to this keyword of the class instace
+   - props is an object and name is its properties.
+   - render nomencluture comes from render().
+   - render means return piece of jsx.
+
+### state variable in CBC and FBC
+
+- FBC:
+
+ ```js
+ import {useState} from 'react';
+ const Profile = () => {
+   const [count] = useState(0);
+    return (
+        <div>
+            <h2>Count:{count}</h2>
+       </div>
+   ) 
+}
+export default Profile;
+```
+- CBC:
+
+```js
+
+class Profile extends React.Component{
+   constructor(props){
+      super(props);
+      // create state
+      this.state{
+         count:0;
+      }
+   }
+    render() {
+        return (<div>
+            <h1>Profile class renders..</h1>
+            <h1>Count: {this.state.count}</h1>
+            {this.props.name}
+        </div>)
+    }
+}
+export default Profile;
+```
+- Need to write cconstructor with props parameter
+- Under the constructor, we should use super(props).
+- super() is mandatory
+- use this.state, for creating state variables
+- we can destructure also. `const {count}=this.state`
+
+### Two states in CBC and FBC
+- FBC:
+```js
+const [count1] = useState(0);
+const [count2] = useState(0);
+```
+- CBC
+```js
+constructor(props){
+      super(props);
+      // create state
+      this.state{
+         count1:0,
+         count2:0
+      }
+   }
+```
+- Never do like below
+```js
+constructor(props){
+      super(props);
+      // create state
+      this.state{
+         count1:0,
+      };
+      this.state{
+         count2:0
+      }
+   }
+```
+- React used one object to maintain states behind the scene. Don't do this.state{//code} multiple times
+
+### setState in CBC and FBC
+- FBC:
+
+```js
+ const [count,setCount] = useState(0);
+ return (<div>
+            <button onClick={()=>setCount(1)}>click</button>
+        </div>)
+    
+
+```
+- CBC (this.setState)
+```js
+
+ return (<div>
+            <button onClick={()=>{
+               this.setState({
+                  count:1
+               })
+            }}>click</button>
+        </div>)
+    
+
+```
+- use setState. Do not mutate directly.`this.state.count=1`---> Don't do it.
+- Reconcilliation happens with setState, not with directly mutated object.
+- Reconcilliation happens in the same way whether it's CBC or FBC.
+
+### Multiple setState
+- FBC: I know what is going to be set
+```js
+ const [count1,setCount1] = useState(0);
+ const [count2,setCount2] = useState(0);
+
+ return (<div>
+            <button onClick={()=>
+            setCount1(1);
+            setCount2(1);
+            }>click</button>
+        </div>)
+```
+- CBC (this.setState): I don't know what is going to be set
+```js
+
+ return (<div>
+            <button onClick={()=>{
+               this.setState({
+                  count1:1
+                  count2:1
+               })
+            }}>click</button>
+        </div>)
+```
+
+### Why is React so popular?
+- Reconcilliation, Bundlers are not the only thing for popularily. React has constantly made developers happy.
+
+### Sequence of excution in CBC for render and contructor
+- constructor ----> render()
+
+### Function to call the API in CBC and FBC
+- FBC 
+   - useEffect
+   - Sequence : render ---> useEffect
+
+- CBC
+   - componentDidMount
+   - sequence : constructor---> render component---> componentDidMount()
+   - componentDidMount(){//call the api}
+
+### Execution sequence of render, constructor, componentDidMount() in CBC when there is a parent and a child
+- parent constructor---> parent render---> child constructor---> child render---> child componentDidMount()---> parent componentDidMount
+
+### Execution sequence of a parent with 2 children
+parent
+   child 1
+   child 2
+- parent constructor---> parent render-->child 1 constructor---> child 1 render--->child 2 constructor---> child 2 render-->child 1 componentDidMount() --> child 2 componentDidMount() -->  parent componentDidMount
