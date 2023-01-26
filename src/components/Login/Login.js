@@ -2,7 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import * as EmailValidator from "email-validator"; // used when validating with a self-implemented approach
 import * as Yup from "yup"; // used when validating with a pre-built solution
-import Logo from "../assets/images/hunger-box.png";
+import Logo from "../../assets/images/hunger-box.png";
 
 const Login = () => (
     

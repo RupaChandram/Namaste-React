@@ -8,7 +8,8 @@ import About from "./components/About/About";
 import Error from "./components/Error/Error";
 import Contact from "./components/Contact/Contact";
 import RestaurantMenu from "./components/RestaurantCard/RestaurantMenu";
-import Login from "./Login/Login";
+import Login from "./components/Login/Login";
+
 
 /**
      * Header
@@ -62,7 +63,7 @@ const appRouter = createBrowserRouter([
     },
     {
                 path: "/login",
-                element:<Login/>
+                element:<Login />
     }
 ]);
  
