@@ -4,7 +4,18 @@ export const ITEM_IMG_CDN  = "https://res.cloudinary.com/swiggy/image/upload/fl_
 export const GET_RESTAURANTS_LIST = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
 export const GET_RESTAURANT_MENU = "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=";
 
-//Config-driven UI
+/* Github link to get users */ 
+export const GITHUB_GET_USER = "https://api.github.com/users/";
+
+/* Social Media Links */ 
+export const GITHUB_LINK = "https://github.com/RupaChandram"  ;
+export const LINKEDIN_LINK= "" ;
+export const GMAIL_LINK = "mailto:rupachandra167.com";
+
+/* Gihub info */
+export const GITHUB_USER_NAME = "RupaChandram";
+
+/* Config-driven UI */
 export const restaurantList=[
               {
                 "type": "restaurant",

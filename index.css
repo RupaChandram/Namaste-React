@@ -148,6 +148,107 @@ a{
  .error-container{
   text-align: center;
  }
+ /* Profile Styles */
+
+ .profile-card {
+   margin-top:1rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap:1rem;
+ }
+.profile-container{
+  height: 30rem;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  background: #fff;
+  border-radius: 5px;
+  padding: 2rem;
+}
+ .profile-img {
+   border-radius: 50%;
+   width: 15rem;
+   height: 15rem;
+   
+ }
+
+ .profile-bio {
+   font-size: 1.1rem;
+   text-align: center;
+   color: rgb(134, 134, 134);
+   padding-top: 20px;
+   margin-top: 0;
+   margin-bottom: 1em;
+ }
+ .about-container{
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  gap: 2rem;
+ }
+
+ /* Blog Repo Styles  */
+
+ .blog-card {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+ }
+ .profile-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ .blog-followers,
+ .blog-repo-count,.followers,.repos {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+   color: #444;
+ }
+ .blog-list-title{
+  height: 5rem;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    background: #fff;
+    border-radius: 5px;
+   padding-top: 1rem;
+ }
+
+ .repo-container {
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+ }
+
+ .repo-list-title {
+   font-size: 20px;
+   margin-top: 10px;
+   color: #444;
+   margin-bottom: 10px;
+ }
+
+ .repo-card {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 20px;
+   border: 1px solid #eee;
+ }
+
+ .repo-title {
+   font-size: 20px;
+   color: #444;
+   gap:2rem;
+ }
+
+ .repo-title:hover {
+   color: #1890ff;
+ }
+
+ .repo-bio {
+   font-size: 16px;
+   color: #999;
+ }
+
  /*Shimmer CSS */
  .shimmer-container {
    display: flex;

@@ -8,8 +8,8 @@ import About from "./components/About/About";
 import Error from "./components/Error/Error";
 import Contact from "./components/Contact/Contact";
 import RestaurantMenu from "./components/RestaurantCard/RestaurantMenu";
-import Login from "./Login/Login";
-import Profile from "./components/Profile/Profile";
+import Login from "./components/Login/Login";
+import ProfileClass from "./components/Profile/ProfileClass";
 
 /**
      * Header
@@ -51,7 +51,7 @@ const appRouter = createBrowserRouter([
                 element: <About />,
                 children: [{
                     path: "profile",
-                    element:<Profile/>
+                    element:<ProfileClass/>
                 }]
             },
             {

@@ -61,31 +61,40 @@ export default About;
 ### What is the order of life cycle method calls in Class Based Components.
 ![Alt text](./src/assets/notes-images/component-life-cycle.png "Component Life Cycle")
 
+`Constructor` ---> `render()` ---> `componentDidMount()`--> `render()`--> `componentDidUpdate` --> `componentWillUnmount()`(if we leave the page)
+
 - Class based components are executed in two phases : Render phase & commit phase.
+- Render Phase:
+  - constructor
+    - The constructor for a React component is called before it is mounted. 
+    - When implementing the constructor for a React.Component subclass, you should call super(props) before any other statement. Otherwise, this.props will be undefined in the constructor, which can lead to bugs.
+    - You should not call setState() in the constructor()
+    - Instead, if your component needs to use local state, assign the initial state to this.state directly in the constructor
+  - render(): 
+    - The render() method is the only required method in a class component.
 
-- Render phase is pure and no side effects. It may be paused, restarted or aborted by React (when child component is created for eg). The constructor(), render() and componentDidMount() happens in this phase.
+- Commit phase
+  - componentDidMount
+    - componentDidMount() is invoked immediately after a component is mounted (inserted into the tree). 
+    - Initialization that requires DOM nodes should go here. 
+    - If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
+  - componentDidUpdate : 
+    - componentDidUpdate() is invoked immediately after updating occurs. This method is not called for the initial render.
+  - componentWillUnmount : 
+    - This method is called when a component is being removed from the DOM:
 
-- In constructor, the props are passed to its parents.
+- In other way, the whole execution happens in 3 phases:
+1. Mounting
+- Mounting means something needs to be mounted
+- For mounting we need initialization, dom rendering, api calling.
+- constructor, render and componentDidMound comes under in this phase.
 
-- These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+2. Updating : 
+- render() function is called followed by componentDidUpdate().
+ 
+3. Unmounting :
+- When we leave the page, it gets called.
 
-1. Mounting :
-
-constructor 
-- The constructor for a React component is called before it is mounted. When implementing the constructor for a React.Component subclass, you should call super(props) before any other statement. Otherwise, this.props will be undefined in the constructor, which can lead to bugs.
-- Initializing local state by assigning an object to this.state
-- Binding event handler methods to an instance.
-- Constructor is the only place where you should assign this.state directly. In all other methods, you need to use this.setState() instead.
-
-2. componentDidMount() 
-- componentDidMount() is invoked immediately after a component is mounted (inserted into the tree). You may call setState() immediately in componentDidMount() so that it triggers re-render before the browser updates the screen.
-
-3. Updating : 
- componentDidUpdate() - componentDidUpdate() is invoked immediately after updating occurs. This method is not called for the initial render.
-
-4. Unmounting :
-- componentWillUnmount() -componentWillUnmount() is invoked immediately before a component is unmounted and destroyed. 
-- Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
 ### Why do we use componentDidMount?
 - Component life cycle method.
 - The componentDidMount() method allows us to execute the React code when the component is already placed in the DOM (Document Object Model). 
@@ -101,7 +110,7 @@ constructor
 ```js
 componentDidMount(){
   setInterval(()=>{
-    this.tick(),
+    this.tick()
   },1000);
 }
 ```
