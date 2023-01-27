@@ -32,12 +32,12 @@
 - Imlementation of life cycle methods to understand life cycle
 
 ### Have a look in .md files
-Question : question.md
-Notes : notes.md
-Theory assignment: theory-assignment.md
-Coding : code.md
-Best Practices : best-practices.md
-Live link: [Let's get classy](https://class-08-lets-get-classy.netlify.app/)
+- Question : question.md
+- Notes : notes.md
+- Theory assignment: theory-assignment.md
+- Coding : code.md
+- Best Practices : best-practices.md
+- Live link: [Let's get classy](https://class-08-lets-get-classy.netlify.app/)
 
 ### Happy coding !!!
 
