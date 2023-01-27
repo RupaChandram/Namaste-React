@@ -29,7 +29,7 @@
 - Created one nested route
 - Created class based component
 - Completed About section through class based component
-- Imlementation of life cycle methods to understand life cycle
+- Implementation of life cycle methods to understand life cycle
 
 ### Have a look in .md files
 - Question : question.md
