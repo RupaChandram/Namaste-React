@@ -306,7 +306,7 @@ parent
 - parent constructor---> parent render-->child 1 constructor---> child 1 render--->child 2 constructor---> child 2 render-->child 1 componentDidMount() --> child 2 componentDidMount() -->  parent componentDidMount
 
 ### Component Life cycle
-[Component Life Cycle](./src/assets/notes-images/component-life-cycle.png)
+![Alt text](./src/assets/notes-images/component-life-cycle.png "Component Life Cycle")
 
 ### use of componentWillUnmount
 - The componentWillUnmount() method allows us to execute the React code when the component gets destroyed or unmounted from the DOM (Document Object Model). 
@@ -348,6 +348,6 @@ componentWillUnmount(){
 
 - [React Life Cycle Method Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 - [createHashRouter](https://reactrouter.com/en/main/routers/create-hash-router)
-- [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router
+- [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router]
 - [Code Link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
 - [asyn useEffect](https://ultimatecourses.com/blog/using-async-await-inside-react-use-effect-hook#:~:text=Why%3F,]function%20will%20never%20get%20called.)
