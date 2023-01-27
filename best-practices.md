@@ -5,4 +5,4 @@
 - Never use useState outside the component. 
 - CDN is a great place to host images.
 - Don't use packages for every small things.
-- Keep images insige assets folder.
+- Keep images inside assets folder.
