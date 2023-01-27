@@ -59,7 +59,33 @@ export default About;
 - [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router)
 
 ### What is the order of life cycle method calls in Class Based Components.
+![Alt text](./src/assets/notes-images/component-life-cycle.png "Component Life Cycle")
 
+- Class based components are executed in two phases : Render phase & commit phase.
+
+- Render phase is pure and no side effects. It may be paused, restarted or aborted by React (when child component is created for eg). The constructor(), render() and componentDidMount() happens in this phase.
+
+- In constructor, the props are passed to its parents.
+
+- These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+
+1. Mounting :
+
+constructor 
+- The constructor for a React component is called before it is mounted. When implementing the constructor for a React.Component subclass, you should call super(props) before any other statement. Otherwise, this.props will be undefined in the constructor, which can lead to bugs.
+- Initializing local state by assigning an object to this.state
+- Binding event handler methods to an instance.
+- Constructor is the only place where you should assign this.state directly. In all other methods, you need to use this.setState() instead.
+
+2. componentDidMount() 
+- componentDidMount() is invoked immediately after a component is mounted (inserted into the tree). You may call setState() immediately in componentDidMount() so that it triggers re-render before the browser updates the screen.
+
+3. Updating : 
+ componentDidUpdate() - componentDidUpdate() is invoked immediately after updating occurs. This method is not called for the initial render.
+
+4. Unmounting :
+- componentWillUnmount() -componentWillUnmount() is invoked immediately before a component is unmounted and destroyed. 
+- Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
 ### Why do we use componentDidMount?
 - Component life cycle method.
 - The componentDidMount() method allows us to execute the React code when the component is already placed in the DOM (Document Object Model). 
@@ -75,7 +101,7 @@ export default About;
 ```js
 componentDidMount(){
   setInterval(()=>{
-    console.log("hello")
+    this.tick(),
   },1000);
 }
 ```
@@ -97,9 +123,47 @@ componentDidMount(){
 ```
 2. use `componentWillUnmount()`.
 ```js
-componentWillUnmount(){
-  clearInterval(this.timer);
+ componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+```
+- Component will looks like below:
+```js
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timer = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 ### (Research) Why do we use super(props) in constructor?
@@ -158,6 +222,6 @@ useEffect(() => {
 
 - [React Life Cycle Method Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 - [createHashRouter](https://reactrouter.com/en/main/routers/create-hash-router)
-- [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router]
+- [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router)
 - [Code Link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
 - [asyn useEffect](https://ultimatecourses.com/blog/using-async-await-inside-react-use-effect-hook#:~:text=Why%3F,]function%20will%20never%20get%20called.)
