@@ -304,3 +304,50 @@ parent
    child 1
    child 2
 - parent constructor---> parent render-->child 1 constructor---> child 1 render--->child 2 constructor---> child 2 render-->child 1 componentDidMount() --> child 2 componentDidMount() -->  parent componentDidMount
+
+### Component Life cycle
+[Component Life Cycle](./src/assets/notes-images/component-life-cycle.png)
+
+### use of componentWillUnmount
+- The componentWillUnmount() method allows us to execute the React code when the component gets destroyed or unmounted from the DOM (Document Object Model). 
+- This method is called during the Unmounting phase of the React Life-cycle i.e before the component gets unmounted.
+- All the cleanups such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount() should be coded in the componentWillUnmount() method block.
+- Tip: Never call setState() in componentWillUnmount() method.
+- Eg: 
+```js
+componentDidMount(){
+  setInterval(()=>{
+    console.log("hello")
+  },1000);
+}
+```
+- It will call `componentDidMount()` every second.
+- cons:
+  - If you will leave the page, it will still gets called.
+  - This is the problem of SPA.
+  - Because it's not reloading of refreshing.
+  - Performance loss.
+  - Needs to be cleaned with the help of `componentWillUnmount()`
+- How to clean :
+1. Assign the funtion to the variable.
+```js
+componentDidMount(){
+  this.timer=setInterval(()=>{
+    console.log("hello")
+  },1000);
+}
+```
+2. use `componentWillUnmount()`.
+```js
+componentWillUnmount(){
+  clearInterval(this.timer);
+}
+```
+
+### References:
+
+- [React Life Cycle Method Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [createHashRouter](https://reactrouter.com/en/main/routers/create-hash-router)
+- [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router
+- [Code Link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
+- [asyn useEffect](https://ultimatecourses.com/blog/using-async-await-inside-react-use-effect-hook#:~:text=Why%3F,]function%20will%20never%20get%20called.)
