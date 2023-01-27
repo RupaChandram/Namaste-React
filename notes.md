@@ -1,4 +1,4 @@
-### Parce gives a lot of features to you add if added
+### Parcel gives a lot of features to you add if added
 1. HMR (Hot module replacement)
     * when you save the changes, it reflects in the browser instantly.
 2. File watcher algorithm
