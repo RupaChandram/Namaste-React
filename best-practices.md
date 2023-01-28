@@ -5,7 +5,7 @@
 - Never use useState outside the component. 
 - CDN is a great place to host images.
 - Don't use packages for every small things.
-- Keep images insige assets folder.
+- Keep images inside assets folder.
 - Never use `/child` for children of children (nested route). slash means concate with root not the relative path. Instead of `/child`, use `children`(relative path).
 - If you are creating new project, please don't write CBC. Always prefer FBC.
 - Never call setState() in componentWillUnmount() method.
