@@ -83,7 +83,7 @@ export default About;
   - componentWillUnmount : 
     - This method is called when a component is being removed from the DOM:
 
-- In other way, the whole execution happens in 3 phases:
+- In other way, the whole execution happens in 3 states:
 1. Mounting
 - Mounting means something needs to be mounted
 - For mounting we need initialization, dom rendering, api calling.

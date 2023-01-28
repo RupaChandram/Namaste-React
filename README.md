@@ -7,7 +7,7 @@
 
 ### Topics that are covered:
 - Quick Test 
-- Children of Children in routing
+- Nested routing
 - Class Based Component
 - extends
 - props in CBC and FBC

@@ -1,6 +1,6 @@
 ### Topics that are covered:
 - Quick Test 
-- Children of Children in routing
+- Nested routing
 - Class Based Component
 - extends
 - props in CBC and FBC
@@ -48,7 +48,7 @@
 8. What element do we use to show the error in the routing?
 - errorElement
 
-### Children of Children
+### Nested Routing (Children of Children)
 If you want to render children inside children 
 steps with example
 1. create profile component
