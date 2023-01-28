@@ -1,6 +1,9 @@
 ## Chapter - 08 (Let's get classy)
 
-- This chapter is all about class based component and life cycle of component
+- This chapter is all about class based component and life cycle of component.
+- Class based component is very important for interviews.
+- Although we have to use functional based components for upcoming projects, it's compulsory to know about class based component because many companies can have older projects so we need to aware of that. It will make you a better developer because through this, you will get to know that what the pholosophy was when react developed
+##### Remember adapt coding practice. Know about CBC but use FBC.
 
 ### Topics that are covered:
 - Quick Test 
