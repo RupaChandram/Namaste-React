@@ -440,4 +440,4 @@ componentDidUpdate(prevProps, prevState){
 - [createHashRouter](https://reactrouter.com/en/main/routers/create-hash-router)
 - [createMemoryRouter](https://reactrouter.com/en/main/routers/create-memory-router)
 - [Code Link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
-- [asyn useEffect](https://ultimatecourses.com/blog/using-async-await-inside-react-use-effect-hook#:~:text=Why%3F,]function%20will%20never%20get%20called.)
+- [async useEffect](https://ultimatecourses.com/blog/using-async-await-inside-react-use-effect-hook#:~:text=Why%3F,]function%20will%20never%20get%20called.)
