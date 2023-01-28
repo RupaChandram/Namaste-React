@@ -1,4 +1,4 @@
-## Class Summary Chapter - 04 Talk is cheap, show me in code (07/01/2023)
+## Chapter - 04 Talk is cheap, show me the code (07/01/2023)
 ### Topics that are covered in this chapter
 * To develop a config-driven UI for food ordering platform. 
 * To draw the layout 
