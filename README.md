@@ -1,4 +1,4 @@
-## Class Summary Chapter - 05 Let's get hooked (08/01/2023)
+## Chapter - 05 Let's get hooked (08/01/2023)
 ### Topics that are covered in class 5
 * Recap of previous class
     * React.Fragment
@@ -27,5 +27,7 @@
 - Coding steps: code.md
 
 ### Live link : [lets get hooked](https://react-hungerbox-chapter-05.netlify.app/)
+
+### Happy Coding !!!
 
 
