@@ -1,53 +1,19 @@
 import RestaurantCard from "../RestaurantCard/RestaurantCard"
-import { GET_RESTAURANTS } from "../Config/config"
+import { GET_RESTAURANTS } from "../../config/config"
 import { useState,useEffect } from "react";/** Named Export*/
 import Shimmer from "../Shimmer/Shimmer";
-import {Link} from "react-router-dom"
-
-const filterData = (searchText, restaurants) => {
-  return restaurants.filter(restaurant => restaurant?.data?.name?.toLowerCase().includes(searchText.toLowerCase()));
-}
-
+import { Link } from "react-router-dom";
+import {filterData} from "../../utils/helper"
+import useRestaurants from "../../utils/useRestaurants";
 
 const Body = () => { 
-  console.log(useState());
   const [searchInput, setSearchInput] = useState();
-  const [allRestaurants, setAllRestaurants] = useState([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  const [errorMsg, setErrorMsg] = useState(''); 
   
-  //empty dependency array => Once after render
-  // dependency [searchText] =>once after initial render + everytime after rerender (change in searchText )
-  useEffect(() => {
-    getRestaurants();
-}, [])
-  
-  async function getRestaurants() {
-    try {
-      const data = await fetch(GET_RESTAURANTS);
-      const json = await data.json();
-
-      setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    }
-    catch(err){
-      console.log(err);
-    }
-  }
-    
-
-    const searchData = (searchText, allRestaurants ) => ()=> {  
-    if(searchText !== '') {
-    const data = filterData(searchText,allRestaurants);
-    setFilteredRestaurants(data); 
-    if (data.length === 0) {
-      setErrorMsg('No matches found ');
-    }
-  } else {
-      if(errorMsg) setErrorMsg('');
-      setFilteredRestaurants(allRestaurants);
-    }
-  }
+  const restaurants = useRestaurants();
+  const allRestaurants = restaurants.allRestaurant;
+  const filteredRestaurants = restaurants.filteredRestaurants;
+  const searchData = restaurants.searchData;
+  const errorMsg = restaurants.errorMsg;
 
   //early return
   if (!allRestaurants) return null;

@@ -1,26 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useEffect,useState } from "react";
-import { GET_RESTAURANT_MENU,CLOUD_IMAGE_CDN,ITEM_IMG_CDN  } from "../Config/config";
+import { CLOUD_IMAGE_CDN,ITEM_IMG_CDN  } from "../../config/config";
 import { MenuShimmer } from "../Shimmer/Shimmer";
+import useRestaurantMenu from "../../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
     const { resId } = useParams();
-    const [restaurant, setRestaurant] = useState(null);
+    const restaurant = useRestaurantMenu(resId);
   
-    useEffect(() => {
-        getRestaurantInfo();
-    }, []);
-    
-    const getRestaurantInfo = async () => {
-        try {
-            const response = await fetch(GET_RESTAURANT_MENU + resId);
-            const json = await response.json();
-            setRestaurant(json?.data)
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
     return !restaurant ? (
     <MenuShimmer />
     ) : (

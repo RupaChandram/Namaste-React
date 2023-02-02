@@ -1,5 +1,5 @@
 import React from "react";
-import { GITHUB_GET_USER } from "../Config/config";
+import { GITHUB_GET_USER } from "../../config/config";
 class Profile extends React.Component{
     constructor(props) {
         super(props);

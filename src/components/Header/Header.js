@@ -1,6 +1,7 @@
 import logo from "../../assets/images/hunger-box.png"
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import online from "../../assets/images/online-user.png";
 
 export const Title = () => (
     <a href="/" >
@@ -18,8 +19,9 @@ export const Header = () => {
                 <ul>
                     <li><Link style={{color: "#38171F" ,opacity:"0.9"}} to="/">Home</Link></li>
                     <li><Link style={{color: "#38171F" ,opacity:"0.9"}} to="/about">About</Link></li>
-                    <li><Link style={{color: "#38171F" ,opacity:"0.9"}} to="/contact">Contact</Link></li>
-                     {isLoggedIn? (<li><Link style={{color: "#38171F" ,opacity:"0.9"}}onClick={()=>{setIsLoggedIn(false)}} >Login</Link></li> ) : (<li><Link style={{color: "#38171F",opacity:"0.9"}}to="/login" className="login" onClick={()=>{setIsLoggedIn(true)}}> Logout </Link></li> ) }
+                    <li><Link style={{ color: "#38171F", opacity: "0.9" }} to="/contact">Contact</Link></li>
+                    {isLoggedIn ? (<li><Link style={{ color: "#38171F", opacity: "0.9" }} onClick={() => { setIsLoggedIn(false) }} >Login</Link></li>) : (<li><Link style={{ color: "#38171F", opacity: "0.9" }} to="/login" className="login" onClick={() => { setIsLoggedIn(true) }}> Logout </Link></li>)}
+                      <li><Link><img className="online" src={online} alt="" /></Link></li>
                 </ul>
             </div>      
         </div>

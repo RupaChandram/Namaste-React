@@ -10,6 +10,8 @@ import Contact from "./components/Contact/Contact";
 import RestaurantMenu from "./components/RestaurantCard/RestaurantMenu";
 import Login from "./components/Login/Login";
 import ProfileClass from "./components/Profile/ProfileClass";
+import useOnline from "./utils/useOnline";
+import NetworkError from "./components/Error/NetworkError";
 
 /**
      * Header
@@ -28,13 +30,19 @@ import ProfileClass from "./components/Profile/ProfileClass";
      *  - copyright
      */
       
-const Layout = () => (
-    <React.Fragment>
-        <Header.Header />
-        <Outlet />
-        <Footer />
-    </React.Fragment>
-)
+const Layout = () => {
+    const isOnline = useOnline();
+    if (!isOnline) {
+        return <NetworkError />
+    }
+    return (
+        <React.Fragment>
+            <Header.Header />
+            <Outlet />
+            <Footer />
+        </React.Fragment>
+    )
+}
 
 const appRouter = createBrowserRouter([
     {

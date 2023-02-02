@@ -1,4 +1,4 @@
-import { CLOUD_IMAGE_CDN } from '../Config/config';
+import { CLOUD_IMAGE_CDN } from '../../config/config';
 
 const RestaurantCard = ({ name, cuisines, lastMileTravelString, avgRating, cloudinaryImageId }) => {
     return (

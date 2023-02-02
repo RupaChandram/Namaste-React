@@ -594,8 +594,37 @@ button:hover {
   color: rgb(70, 153, 179);
 }
 .login-img{
-height: 4rem;
-width: 4rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+/* offline hooks css*/
+.offline-container{
+  height: 60%vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.offline{
+  border-radius: 50%;
+  height: 20rem;
+  width: 25rem;
+  margin-top: 5rem;
+}
+.offline-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.description{
+  text-align: center;
+  font-size:1rem ;
+}
+.online{
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
  /* Extra small devices (phones, 600px and down) */

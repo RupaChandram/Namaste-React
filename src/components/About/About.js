@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { GITHUB_USER_NAME } from "../Config/config";
+import { GITHUB_USER_NAME } from "../../config/config";
 import Blog from "../Profile/BlogClass";
 import ProfileClass from "../Profile/ProfileClass";
 class About extends Component{
