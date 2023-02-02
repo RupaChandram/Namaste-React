@@ -1,29 +1,16 @@
-### Assignment : 08 (Let's Get Classy)
+### Assignment : 09 (Optimizing The App)
 ### Theory Assignment:
-
-* How do you create Nested Routes react-router-dom cofiguration
-* Read abt createHashRouter, createMemoryRouter from React Router docs
-* What is the order of life cycle method calls in Class Based Components
-* Why do we use componentDidMount?
-* Why do we use componentWillUnmount? Show with example.
-* (Research) Why do we use super(props) in constructor?
-* (Research) Why can't we have the callback function of useEffect async?
+- 1. When and why do we need lazy()?
+- 2. What is suspense?
+- 3. Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
+- 4. Advantages and disadvantages of using this code splitting pattern?
+- 5. Advantages and disadvantages of using this code splitting pattern?
 
 ### Coding Assignment:
-
-* Create a Class Based Component
-  - Create 2 class based child components
-  - Pass props from Parent to child
-  - Create a constructor
-  - Create a state variable inside child
-  - Use this setState to update it
-  - What if there are multiple state variables?
-  - Write a console.log for each lifecycle method
-  - Play with the console logs to find out the correct order of their execution 
-* Create interval inside componentDidMount?
-  - Use clearInterval to fix the issue caused by that interval
+- Create you own custom hooks.
+- Try out lazy and suspense
+- Make your code clean
 
 ### References:
-
-- [React Life Cycle Method Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
-- [Code Link](https://bitbucket.org/namastedev/namaste-react-live/src/master/)
+- [Custom Hooks](https://reactjs.org/docs/hooks-custom.html)
+- [suspense for code splitting](https://beta.reactjs.org/reference/react/lazy#suspense-for-code-splitting)
