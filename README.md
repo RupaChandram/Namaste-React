@@ -32,7 +32,7 @@ We are going to create our own hook.
 - Theory assignment: theory-assignment.md
 - Coding : code.md
 - Best Practices : best-practices.md
-- Live link: 
+- Live link: [Optimizing the app](https://class-9-optimizing-the-app.netlify.app/)
 
 ### Cheers!!! Chapter 9 means completion of half journey of React live course.🥳🥳
 ### Happy coding !!!
