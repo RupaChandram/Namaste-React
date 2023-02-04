@@ -4,7 +4,6 @@
 - 2. What is suspense?
 - 3. Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
 - 4. Advantages and disadvantages of using this code splitting pattern?
-- 5. Advantages and disadvantages of using this code splitting pattern?
 
 ### Coding Assignment:
 - Create you own custom hooks.
