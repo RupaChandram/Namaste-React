@@ -1,10 +1,9 @@
-import React from "react";
+import React,{lazy,Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import * as Header from "./components/Header/Header";
 import {Footer as Footer} from "./components/Footer/Footer"; /* Imported using Named Import Map */
 import Body from "./components/Body/Body"; /* Imported using default export */
 import {createBrowserRouter,Outlet,RouterProvider} from "react-router-dom"
-import About from "./components/About/About";
 import Error from "./components/Error/Error";
 import Contact from "./components/Contact/Contact";
 import RestaurantMenu from "./components/RestaurantCard/RestaurantMenu";
@@ -13,6 +12,7 @@ import ProfileClass from "./components/Profile/ProfileClass";
 import useOnline from "./utils/useOnline";
 import NetworkError from "./components/Error/NetworkError";
 
+const AboutComponent = lazy(() => import('./components/About/About'));
 /**
      * Header
      *  - Logo
@@ -56,7 +56,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />,
+                element: <Suspense fallback={<div> Please Wait... </div>}><AboutComponent /></Suspense>,
                 children: [{
                     path: "profile",
                     element:<ProfileClass/>

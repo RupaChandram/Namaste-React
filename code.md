@@ -16,6 +16,7 @@
 - Added online user on header
 ### Lazy loading implemetation
 - Lazy loaded contacts component
+- Do not use normal import. use lazy().
 
 
 
