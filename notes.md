@@ -116,7 +116,8 @@ useEffect(() => {
     - Go to dev tool
     - click on js in the network tab
     - check the response
-![Bundler response](../Namaste-React/src/assets/notes-images/bundler.png)
+
+![Alt text](./src/assets/notes-images/component-life-cycle.png "Bundler response (1 js file)")
 
 ### Chunking or Code Splitting or Dynamic Bundling or Lazy Loading
 - In simple terms, lazy loading is a design pattern. 

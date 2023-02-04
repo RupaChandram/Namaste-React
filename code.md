@@ -14,6 +14,8 @@
 - But as we know, we should not import library for simple thing so just used simple image to show that you are offline (<NetworkError />).
 ### Online user 
 - Added online user on header
+### Lazy loading implemetation
+- Lazy loaded contacts component
 
 
 
