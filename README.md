@@ -21,4 +21,17 @@ Checkout to my branches
 |Chapter-06: Exploring the world| API integration, useEffect hook, Monolith Architecture, Microservices Architecture, Proper filter function, Toggling of login/logout, Early render, Shimmer Effect, UI/UX, Optional chaining,Conditional rendering |[Exploring the world](https://chapter-06-exploring-the-world.netlify.app/)|[sources](https://github.com/RupaChandram/Namaste-React/tree/class-6-exploring-the-world)|
 |Chapter-07: Finding the path| React Router Dom, Dynamic Routing, Formik, Types of routing, SPA, Link, Outlet, image import, children in routing, disadvantages of anchor tag |[Finding-the-path ](https://chapter-07-finding-the-path.netlify.app/)|[sources](https://github.com/RupaChandram/Namaste-React/tree/class-7-finding-the-paths)|
 |Chapter-08: Let's get classy| Class based component, nested routing, component life cycle  |[Let's get classy ](https://class-08-lets-get-classy.netlify.app/)|[sources](https://github.com/RupaChandram/Namaste-React/tree/class-8-lets-get-classy)|
+|Chapter-09: Optimizing our app| How to optimize the app, custom hooks, lazy loading or code splitting, lazy(), Suspense |[Optimizing our app](https://class-9-optimizing-the-app.netlify.app/)|[sources](https://github.com/RupaChandram/Namaste-React/tree/class-9-optimizing-our-app)|
+
+
+
+
+
+
+
+
+
+
+
+
 
