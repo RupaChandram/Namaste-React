@@ -1,15 +1,16 @@
-### Assignment : 09 (Optimizing The App)
+### Assignment : 10 (Jo Dikhta Hai, Wo Bikta hai)
 ### Theory Assignment:
-- 1. When and why do we need lazy()?
-- 2. What is suspense?
-- 3. Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
-- 4. Advantages and disadvantages of using this code splitting pattern?
+
+- Explore all the ways of writing css.
+- How do we configure tailwind?
+- In tailwind.config.js, what does all the keys mean (content, theme, extend, plugins)?
+- Why do we have .postcssrc file?
 
 ### Coding Assignment:
-- Create you own custom hooks.
-- Try out lazy and suspense
-- Make your code clean
+- Configure Tailwind and try to build your whole app using tailwind.
 
 ### References:
-- [Custom Hooks](https://reactjs.org/docs/hooks-custom.html)
-- [suspense for code splitting](https://beta.reactjs.org/reference/react/lazy#suspense-for-code-splitting)
+- [Styled Component](https://styled-components.com/)
+- [Tailwind css](https://tailwindcss.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Material UI](https://mui.com/)
