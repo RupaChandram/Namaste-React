@@ -1,40 +1,20 @@
-## Chapter - 09 (Optimizing the app)
+## Chapter - 10 (Jo Dikhta Hai, Wo Bikta hai)
+- Sounds strange name of the chapter. Right? This chapter is all about styling the pages with different ways because `Jo dikhta hai, wahi to bikta hai` 😂😂 
+- The main thing that we will learn in this chapter is tailwind.
 
-- This chapter is all about code splitting, lazy loading, custom hooks, basically code optimization.
-- We already used many hooks like useEffect(), useParams(), useState() etc. In this session, we will learn about custom hooks. Yessss..
-We are going to create our own hook.
 ### Topics that are covered:
-- Quick Test
--  Hooks
--  Why should we break down the logic into a function?
--  Utility Functions
--  Modularity
--  Let's create a helper hook that will help us to get the restaurant details
--  How custom hook is different from functional component?
--  Why custom hook, why not normal function?
--  online event listener
--  offline event listener
--  Throttling
--  When exactly does React clean up an effect?
--  Bundler
--  Chunking or Code Splitting or Dynamic Bundling or Lazy Loading
--  React.Suspense
--  Important points:
--  References:
+- How to write css in your project.
+- Most popular css Tailwind
 ### Coding 
-- Folder Structure
-- Custom hooks 
-- lazy loading
-- NetworkError component that will show error message if user is offline
+- 
 ### Have a look in .md files
 - Question : question.md
 - Notes : notes.md
 - Theory assignment: theory-assignment.md
 - Coding : code.md
 - Best Practices : best-practices.md
-- Live link: [Optimizing the app](https://class-9-optimizing-the-app.netlify.app/)
+- Live link: [Jo dikhta hai wo bikta hai]()
 
-### Cheers!!! Chapter 9 means completion of half journey of React live course.🥳🥳
 ### Happy coding !!!
 
 
